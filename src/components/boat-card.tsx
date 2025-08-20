@@ -2,7 +2,6 @@
 "use client";
 
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import type { Boat } from '@/lib/types';
 import { FavoriteButton } from './favorite-button';
@@ -15,7 +14,6 @@ interface BoatCardProps {
 }
 
 export function BoatCard({ boat }: BoatCardProps) {
-  const router = useRouter();
   
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -27,19 +25,15 @@ export function BoatCard({ boat }: BoatCardProps) {
 
   const mailtoHref = `mailto:mrarnolddavid23@gmail.com?subject=Inquiry about the ${boat.year} ${boat.make} ${boat.model}&body=I'm interested in getting more information about your ${boat.year} ${boat.make} ${boat.model}. Please contact me. Boat ID: ${boat.id}`;
 
-  const handleCardClick = () => {
-    router.push(`/boats/${boat.id}`);
-  };
-
   const stopPropagation = (e: React.MouseEvent) => {
     e.stopPropagation();
   };
 
   return (
-    <Card 
-      className="overflow-hidden transition-shadow duration-300 hover:shadow-xl flex flex-col cursor-pointer"
-      onClick={handleCardClick}
-    >
+    <Card className="overflow-hidden transition-shadow duration-300 hover:shadow-xl flex flex-col group relative">
+      
+      <Link href={`/boats/${boat.id}`} className="absolute inset-0 z-10" aria-label={`View details for ${boat.name}`} />
+
       {/* Mobile View */}
       <div className="md:hidden">
         <div className="relative">
@@ -69,7 +63,7 @@ export function BoatCard({ boat }: BoatCardProps) {
               </div>
             </div>
           </div>
-          <div className="absolute right-3 top-3 z-10" onClick={stopPropagation}>
+          <div className="absolute right-3 top-3 z-20" onClick={stopPropagation}>
             <FavoriteButton boatId={boat.id} />
           </div>
         </div>
@@ -86,15 +80,15 @@ export function BoatCard({ boat }: BoatCardProps) {
             height={300}
             className="aspect-video w-full object-cover"
           />
-          <div className="absolute right-3 top-3" onClick={stopPropagation}>
+          <div className="absolute right-3 top-3 z-20" onClick={stopPropagation}>
             <FavoriteButton boatId={boat.id} />
           </div>
         </CardHeader>
         <CardContent className="p-4 flex flex-col flex-grow">
           <div>
-            <p className="mb-2 truncate font-semibold text-primary">
+             <h3 className="mb-2 truncate font-semibold text-primary group-hover:underline">
               {boat.year} {boat.make} {boat.model}
-            </p>
+            </h3>
           </div>
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
             <div>
@@ -111,12 +105,12 @@ export function BoatCard({ boat }: BoatCardProps) {
             </div>
             <div>
               <p className="text-xs text-muted-foreground">&nbsp;</p>
-              <a href={mailtoHref} onClick={stopPropagation} className="flex items-center font-semibold text-primary hover:underline">
+              <a href={mailtoHref} onClick={stopPropagation} className="relative z-20 flex items-center font-semibold text-primary hover:underline">
                 <Mail className="mr-2 h-4 w-4" /> Contact Seller
               </a>
             </div>
           </div>
-          <div className="mt-4 border-t pt-4 flex-grow flex flex-col justify-end" onClick={stopPropagation}>
+          <div className="mt-4 border-t pt-4 flex-grow flex flex-col justify-end relative z-20" onClick={stopPropagation}>
             <div className="flex gap-2">
               <PaymentOptionsDialog triggerLabel="Purchase"/>
               <RentBoatDialog boatPrice={boat.price} isCard={true} />

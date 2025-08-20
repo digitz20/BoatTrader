@@ -4,7 +4,9 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import type { Boat } from '@/lib/types';
 import { FavoriteButton } from './favorite-button';
-import { Mail } from 'lucide-react';
+import { Mail, Wallet } from 'lucide-react';
+import { PaymentOptionsDialog } from './payment-options-dialog';
+import { Button } from './ui/button';
 
 interface BoatCardProps {
   boat: Boat;
@@ -63,6 +65,9 @@ export function BoatCard({ boat }: BoatCardProps) {
                 <Mail className="mr-2 h-4 w-4" /> Contact Seller
             </a>
           </div>
+        </div>
+        <div className="mt-4 border-t pt-4">
+             <PaymentOptionsDialog />
         </div>
       </CardContent>
     </Card>

@@ -119,7 +119,9 @@ export function PaymentOptionsDialog() {
                     Send your payment to one of the addresses below.
                   </DialogDescription>
                 </DialogHeader>
-                <CryptoPayment />
+                <div className="pt-4">
+                    <CryptoPayment />
+                </div>
             </>
          )}
       </DialogContent>

@@ -1,9 +1,9 @@
 
 import Link from "next/link";
-import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
-const footerLinks = {
+const popularLinks = {
   "Boats for Sale by Type": [
     "Pontoon Boats for Sale", "Sailboats", "Fishing Boats", "Saltwater Fishing Boats",
     "Freshwater Fishing Boats", "Jet Ski, PWC & Jet Boats", "Houseboats", "Bass Boats",
@@ -41,23 +41,54 @@ export function Footer() {
   return (
     <footer className="border-t bg-gray-50 dark:bg-gray-800">
       <div className="container py-12 px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title}>
-              <h3 className="font-bold text-primary mb-4">{title}</h3>
-              <ul className="space-y-2">
-                {links.map(link => (
-                  <li key={link}>
-                    <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                      {link}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+        
+        <div className="mb-8">
+            <h3 className="font-bold text-lg mb-4 text-center">Popular Boats</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {Object.entries(popularLinks).map(([title, links]) => (
+                <div key={title}>
+                <h4 className="font-semibold text-primary mb-2">{title}</h4>
+                <ul className="space-y-1">
+                    {links.slice(0, 12).map(link => (
+                    <li key={link}>
+                        <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                        {link}
+                        </Link>
+                    </li>
+                    ))}
+                    {links.length > 12 && (
+                       <li>
+                         <Link href="#" className="text-sm font-semibold text-primary hover:underline">
+                           See More...
+                         </Link>
+                       </li>
+                    )}
+                </ul>
+                </div>
+            ))}
             </div>
-          ))}
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t">
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-8 border-t">
+            <div>
+                <h4 className="font-semibold text-primary mb-4">Connect with Us</h4>
+                <div className="flex space-x-4">
+                    <Link href="#"><Facebook className="h-6 w-6 text-muted-foreground hover:text-primary" /></Link>
+                    <Link href="#"><Twitter className="h-6 w-6 text-muted-foreground hover:text-primary" /></Link>
+                    <Link href="#"><Instagram className="h-6 w-6 text-muted-foreground hover:text-primary" /></Link>
+                    <Link href="#"><Youtube className="h-6 w-6 text-muted-foreground hover:text-primary" /></Link>
+                </div>
+            </div>
+            <div>
+                 <h4 className="font-semibold text-primary mb-4">Download the BoatTrader App</h4>
+                 <div className="flex space-x-2">
+                    <Link href="#"><img src="https://placehold.co/120x40.png?text=App+Store" alt="App Store" data-ai-hint="button app store" /></Link>
+                    <Link href="#"><img src="https://placehold.co/120x40.png?text=Google+Play" alt="Google Play" data-ai-hint="button google play" /></Link>
+                 </div>
+            </div>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t mt-8">
              {Object.entries(companyLinks).map(([title, links]) => (
                 <div key={title}>
                 <h3 className="font-bold text-primary mb-4">{title}</h3>
@@ -73,13 +104,25 @@ export function Footer() {
                 </div>
             ))}
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-8 border-t mt-8">
-            <div className="flex items-center gap-2">
-                <span className="text-xl font-bold text-primary">Boat Trader</span>
-            </div>
-             <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} Boat Trader. All Rights Reserved.
-            </p>
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 pt-8 border-t mt-8 text-xs text-muted-foreground">
+             <span>Cookies</span>
+             <Link href="#" className="hover:text-primary">Do Not Sell My Personal Information</Link>
+             <Link href="#" className="hover:text-primary">Community Guidelines</Link>
+             <Link href="#" className="hover:text-primary">Security Center</Link>
+             <Link href="#" className="hover:text-primary">Site Map</Link>
+        </div>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-4 mt-4">
+             <p className="text-xs text-muted-foreground text-center">
+                Copyright © {new Date().getFullYear()} Boats Group. All Rights Reserved
+             </p>
+             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
+                <Link href="#" className="hover:text-primary">Ad and Sponsorship Policy</Link>
+                <Link href="#" className="hover:text-primary">Advertiser Agreement</Link>
+                <Link href="#" className="hover:text-primary">Copyright</Link>
+                <Link href="#" className="hover:text-primary">Privacy Policy</Link>
+                <Link href="#" className="hover:text-primary">Terms of Use</Link>
+                <Link href="#" className="hover:text-primary">AdChoices</Link>
+             </div>
         </div>
       </div>
     </footer>

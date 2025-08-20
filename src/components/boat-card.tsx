@@ -25,28 +25,24 @@ export function BoatCard({ boat }: BoatCardProps) {
 
   const mailtoHref = `mailto:mrarnolddavid23@gmail.com?subject=Inquiry about the ${boat.year} ${boat.make} ${boat.model}&body=I'm interested in getting more information about your ${boat.year} ${boat.make} ${boat.model}. Please contact me. Boat ID: ${boat.id}`;
 
-  const stopPropagation = (e: React.MouseEvent) => {
-    e.stopPropagation();
-  };
-
   return (
-    <Card className="overflow-hidden transition-shadow duration-300 hover:shadow-xl flex flex-col group relative">
+    <Card className="overflow-hidden transition-shadow duration-300 hover:shadow-xl flex flex-col group">
       
-      <Link href={`/boats/${boat.id}`} className="absolute inset-0 z-10" aria-label={`View details for ${boat.name}`} />
-
       {/* Mobile View */}
       <div className="md:hidden">
         <div className="relative">
-          <img
-            src={boat.images[0]}
-            alt={boat.name}
-            data-ai-hint="boat"
-            width={400}
-            height={300}
-            className="aspect-video w-full object-cover"
-          />
+            <Link href={`/boats/${boat.id}`} aria-label={`View details for ${boat.name}`}>
+              <img
+                src={boat.images[0]}
+                alt={boat.name}
+                data-ai-hint="boat"
+                width={400}
+                height={300}
+                className="aspect-video w-full object-cover"
+              />
+            </Link>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
-          <div className="absolute bottom-4 left-0 right-0 p-4 pb-3 text-white">
+           <Link href={`/boats/${boat.id}`} className="absolute bottom-0 left-0 right-0 p-4 pb-3 text-white">
             <h3 className="mb-1 text-lg font-bold">{boat.year} {boat.make} {boat.model}</h3>
             <div className="grid grid-cols-3 gap-2 text-xs">
               <div>
@@ -62,8 +58,8 @@ export function BoatCard({ boat }: BoatCardProps) {
                 <span className="font-semibold">View Details</span>
               </div>
             </div>
-          </div>
-          <div className="absolute right-3 top-3 z-20" onClick={stopPropagation}>
+           </Link>
+          <div className="absolute right-3 top-3">
             <FavoriteButton boatId={boat.id} />
           </div>
         </div>
@@ -72,23 +68,27 @@ export function BoatCard({ boat }: BoatCardProps) {
       {/* Desktop View */}
       <div className="hidden md:block flex-grow">
         <CardHeader className="relative p-0 bg-gray-100">
-          <img
-            src={boat.images[0]}
-            alt={boat.name}
-            data-ai-hint="boat"
-            width={400}
-            height={300}
-            className="aspect-video w-full object-cover"
-          />
-          <div className="absolute right-3 top-3 z-20" onClick={stopPropagation}>
+           <Link href={`/boats/${boat.id}`} aria-label={`View details for ${boat.name}`}>
+              <img
+                src={boat.images[0]}
+                alt={boat.name}
+                data-ai-hint="boat"
+                width={400}
+                height={300}
+                className="aspect-video w-full object-cover"
+              />
+           </Link>
+          <div className="absolute right-3 top-3">
             <FavoriteButton boatId={boat.id} />
           </div>
         </CardHeader>
         <CardContent className="p-4 flex flex-col flex-grow">
           <div>
-             <h3 className="mb-2 truncate font-semibold text-primary group-hover:underline">
-              {boat.year} {boat.make} {boat.model}
-            </h3>
+             <Link href={`/boats/${boat.id}`}>
+                <h3 className="mb-2 truncate font-semibold text-primary group-hover:underline">
+                  {boat.year} {boat.make} {boat.model}
+                </h3>
+             </Link>
           </div>
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
             <div>
@@ -105,12 +105,12 @@ export function BoatCard({ boat }: BoatCardProps) {
             </div>
             <div>
               <p className="text-xs text-muted-foreground">&nbsp;</p>
-              <a href={mailtoHref} onClick={stopPropagation} className="relative z-20 flex items-center font-semibold text-primary hover:underline">
+              <a href={mailtoHref} className="flex items-center font-semibold text-primary hover:underline">
                 <Mail className="mr-2 h-4 w-4" /> Contact Seller
               </a>
             </div>
           </div>
-          <div className="mt-4 border-t pt-4 flex-grow flex flex-col justify-end relative z-20" onClick={stopPropagation}>
+          <div className="mt-4 border-t pt-4 flex-grow flex flex-col justify-end">
             <div className="flex gap-2">
               <PaymentOptionsDialog triggerLabel="Purchase"/>
               <RentBoatDialog boatPrice={boat.price} isCard={true} />

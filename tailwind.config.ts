@@ -12,6 +12,7 @@ export default {
       fontFamily: {
         body: ['Roboto', 'sans-serif'],
         headline: ['Roboto', 'sans-serif'],
+        brand: ['"Times New Roman"', 'serif'],
         code: ['monospace'],
       },
       colors: {

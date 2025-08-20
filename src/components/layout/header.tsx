@@ -24,10 +24,6 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">
       <div className="container flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="text-3xl font-bold sm:inline-block font-headline" style={{color: '#132536'}}>Boat Trader</span>
-        </Link>
-        
         <nav className="hidden items-center space-x-6 lg:flex">
           {navItems.map((item) => (
             item.dropdown ? (
@@ -59,6 +55,9 @@ export function Header() {
         <div className="flex items-center justify-end space-x-4">
            <Button variant="ghost" className="text-base text-foreground">Sign up</Button>
            <Button variant="ghost" className="text-base text-foreground">Log in</Button>
+           <Link href="/" className="flex items-center space-x-2">
+             <span className="font-brand text-3xl font-bold" style={{color: '#132536'}}>Boat Trader</span>
+           </Link>
         </div>
       </div>
     </header>

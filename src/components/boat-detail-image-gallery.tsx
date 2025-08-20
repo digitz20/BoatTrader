@@ -20,7 +20,7 @@ export function BoatDetailImageGallery({ images, boatName }: BoatDetailImageGall
                     alt={`Main image for ${boatName}`}
                     width={800} 
                     height={600} 
-                    className="aspect-video w-full object-contain" 
+                    className="aspect-video w-full object-cover" 
                     data-ai-hint="boat"
                 />
             </Card>

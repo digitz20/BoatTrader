@@ -33,7 +33,7 @@ export function BoatCard({ boat }: BoatCardProps) {
             data-ai-hint="boat"
             width={400}
             height={300}
-            className="aspect-video w-full object-contain"
+            className="aspect-video w-full object-cover"
           />
         </Link>
         <div className="absolute right-3 top-3">

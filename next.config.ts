@@ -40,6 +40,12 @@ const nextConfig: NextConfig = {
         hostname: 'images.boatsgroup.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'servedbyadbutler.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

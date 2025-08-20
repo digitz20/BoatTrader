@@ -9,6 +9,7 @@ const images = [
   'https://servedby.boatsgroup.com/e061c2b61/?libBID=4433508',
   'https://servedby.boatsgroup.com/e061c2b61/?libBID=4463621',
   'https://images.boattrader.com/resize/1/11/13/9031113_20230906080646186_1_LARGE.jpg?w=800&h=600&t=1736521177000&exact',
+  'https://servedbyadbutler.com/getad.img/;libID=4598090',
 ];
 
 export function HeroImageCarousel() {

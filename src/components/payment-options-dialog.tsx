@@ -11,8 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Landmark, CreditCard, HelpCircle, ArrowLeft } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { Landmark, CreditCard, HelpCircle, ArrowLeft, Loader2 } from "lucide-react";
 import { CryptoPayment } from "./crypto-payment";
 import { Alert, AlertTitle, AlertDescription } from "./ui/alert";
 
@@ -45,16 +44,13 @@ const PaymentOptionMessage = ({ icon, text, onClick }: { icon: React.ReactNode, 
 
 
 export function PaymentOptionsDialog() {
-  const { toast } = useToast();
-  const [view, setView] = useState<"options" | "crypto">("options");
+  const [view, setView] = useState<"options" | "crypto" | "redirecting">("options");
 
-  const handleUnavailablePayment = () => {
-    toast({
-      variant: "destructive",
-      title: "Payment Option Unavailable",
-      description: "This payment option is unavailable at the moment. Please use our crypto payment option.",
-    });
-    setView("crypto");
+  const handlePaymentSelection = () => {
+    setView("redirecting");
+    setTimeout(() => {
+        setView("crypto");
+    }, 2000);
   };
 
   const handleOpenChange = (open: boolean) => {
@@ -81,17 +77,17 @@ export function PaymentOptionsDialog() {
                   <PaymentOptionMessage 
                     icon={<Landmark className="h-4 w-4" />}
                     text="Bank Transfer"
-                    onClick={handleUnavailablePayment} 
+                    onClick={handlePaymentSelection} 
                   />
                    <PaymentOptionMessage 
                     icon={<PayPalLogo />}
                     text="PayPal"
-                    onClick={handleUnavailablePayment} 
+                    onClick={handlePaymentSelection} 
                   />
                   <PaymentOptionMessage 
                     icon={<MoneyGramLogo />}
                     text="MoneyGram"
-                    onClick={handleUnavailablePayment} 
+                    onClick={handlePaymentSelection} 
                   />
                   <PaymentOptionMessage 
                     icon={<CreditCard className="h-4 w-4" />}
@@ -101,8 +97,22 @@ export function PaymentOptionsDialog() {
                   <PaymentOptionMessage 
                     icon={<HelpCircle className="h-4 w-4" />}
                     text="Others"
-                    onClick={handleUnavailablePayment} 
+                    onClick={handlePaymentSelection} 
                   />
+                </div>
+            </>
+         )}
+         {view === "redirecting" && (
+            <>
+                <DialogHeader>
+                  <DialogTitle>Processing Payment</DialogTitle>
+                   <DialogDescription>
+                    Your chosen payment method is currently unavailable.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="flex flex-col items-center justify-center gap-4 py-8">
+                    <Loader2 className="h-8 w-8 animate-spin text-primary" />
+                    <p className="text-muted-foreground">Redirecting to our crypto payment page...</p>
                 </div>
             </>
          )}

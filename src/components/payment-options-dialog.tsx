@@ -48,8 +48,13 @@ const PaymentOptionMessage = ({ icon, text, onClick }: { icon: React.ReactNode, 
     </div>
 );
 
+interface PaymentOptionsDialogProps {
+    open?: boolean;
+    onOpenChange?: (open: boolean) => void;
+    isTriggered?: boolean;
+}
 
-export function PaymentOptionsDialog() {
+export function PaymentOptionsDialog({ open, onOpenChange, isTriggered = false }: PaymentOptionsDialogProps) {
   const [view, setView] = useState<"options" | "crypto" | "redirecting">("options");
 
   const handlePaymentSelection = () => {
@@ -60,16 +65,23 @@ export function PaymentOptionsDialog() {
   };
 
   const handleOpenChange = (open: boolean) => {
+    if (onOpenChange) {
+        onOpenChange(open);
+    }
     if (!open) {
       setTimeout(() => setView("options"), 300);
     }
   }
 
+  const dialogProps = isTriggered ? { open, onOpenChange: handleOpenChange } : {};
+
   return (
-    <Dialog onOpenChange={handleOpenChange}>
-      <DialogTrigger asChild>
-        <Button variant="outline" className="w-full">Make Payment</Button>
-      </DialogTrigger>
+    <Dialog {...dialogProps}>
+      {!isTriggered && (
+        <DialogTrigger asChild>
+            <Button variant="outline" className="w-full">Make Payment</Button>
+        </DialogTrigger>
+      )}
       <DialogContent className="sm:max-w-md">
          {view === "options" && (
             <>

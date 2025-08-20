@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import { useEffect, useState } from 'react';
@@ -20,6 +21,7 @@ import { BoatCard } from '@/components/boat-card';
 import { FavoriteButton } from '@/components/favorite-button';
 import { BoatDetailImageGallery } from '@/components/boat-detail-image-gallery';
 import { PaymentOptionsDialog } from '@/components/payment-options-dialog';
+import { RentBoatDialog } from '@/components/rent-boat-dialog';
 
 
 export default function BoatDetailClient({ boat }: { boat: Boat }) {
@@ -232,6 +234,7 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
                            <a href={mailtoHref}>Contact Seller</a>
                          </Button>
                          <PaymentOptionsDialog />
+                         <RentBoatDialog boatPrice={boat.price} />
                     </CardContent>
                 </Card>
             </div>
@@ -239,10 +242,3 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
     </div>
   );
 }
-
-    
-
-    
-    
-
-    

@@ -9,6 +9,8 @@ const images = [
   'https://servedby.boatsgroup.com/e061c2b61/?libBID=4433508',
   'https://servedby.boatsgroup.com/e061c2b61/?libBID=4463621',
   'https://servedby.boatsgroup.com/e061c2b61/?libBID=4601538',
+  'https://servedby.boatsgroup.com/e061c2b61/?libBID=4703871',
+  'https://servedby.boatsgroup.com/e061c2b61/?libBID=4622688',
 ];
 
 export function HeroImageCarousel() {

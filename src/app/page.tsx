@@ -1,61 +1,104 @@
 
+
 import Image from 'next/image';
 import { getBoats } from '@/lib/boats';
 import { BoatCard } from '@/components/boat-card';
-import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { BoatSearchTabs } from '@/components/boat-search-tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Ship, Anchor } from 'lucide-react';
 
 export default function Home() {
-  const allBoats = getBoats();
-  const featuredBoats = allBoats.slice(0, 8);
+  const featuredBots = getBoats().slice(0, 8);
 
   return (
     <div>
-      <section className="bg-gray-100 dark:bg-gray-800 py-8">
-        <div className="container mx-auto px-4">
-          <BoatSearchTabs />
-        </div>
-      </section>
-
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-4">
-          <Card>
-            <CardContent className="p-8 flex flex-col md:flex-row items-center gap-8">
-              <div className="flex-1">
-                <h2 className="text-3xl font-bold text-primary mb-2">Sell Your Boat Fast!</h2>
-                <p className="text-muted-foreground mb-4">
-                  We want you to have options selling your boat. Listing your boat is easy, or get a cash offer!
-                </p>
-                <div className="flex gap-2">
-                  <Button asChild>
-                    <Link href="#">List your boat</Link>
-                  </Button>
-                  <Button variant="outline" asChild>
-                    <Link href="#">Get a cash offer</Link>
-                  </Button>
+      <section style={{backgroundColor: '#132536'}}>
+        <div className="container mx-auto px-4 text-white">
+          <Tabs defaultValue="engines" className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="md:col-span-1 pt-6">
+               <TabsList className="grid w-full grid-cols-2 bg-transparent p-0">
+                <TabsTrigger value="boats" className="flex gap-2 items-center data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-blue-500 data-[state=active]:text-white rounded-none">
+                  <Ship /> Boats
+                </TabsTrigger>
+                <TabsTrigger value="engines" className="flex gap-2 items-center data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-blue-500 data-[state=active]:text-white rounded-none">
+                  <Anchor /> Engines
+                </TabsTrigger>
+              </TabsList>
+              <TabsContent value="boats" className="pt-6">
+                <div className="space-y-4">
+                  <h2 className="text-xl font-bold">Find your perfect boat</h2>
+                  <Select>
+                    <SelectTrigger className="w-full h-12 bg-white text-black"><SelectValue placeholder="All Boat Types" /></SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="yacht">Yacht</SelectItem>
+                      <SelectItem value="sailboat">Sailboat</SelectItem>
+                    </SelectContent>
+                  </Select>
+                   <Select>
+                    <SelectTrigger className="w-full h-12 bg-white text-black"><SelectValue placeholder="All Boat Manufacturers" /></SelectTrigger>
+                     <SelectContent>
+                       <SelectItem value="sunseeker">Sunseeker</SelectItem>
+                       <SelectItem value="beneteau">Beneteau</SelectItem>
+                     </SelectContent>
+                  </Select>
+                  <a href="#" className="text-blue-400 hover:underline">Within 200 Miles of Your Location</a>
+                  <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white">Search</Button>
                 </div>
+              </TabsContent>
+               <TabsContent value="engines" className="pt-6 space-y-6">
+                <div className="space-y-4">
+                  <h2 className="text-xl font-bold">Find your perfect engine</h2>
+                  <Select>
+                    <SelectTrigger className="w-full h-12 bg-white text-black"><SelectValue placeholder="All Engine Types" /></SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="inboard">Inboard</SelectItem>
+                      <SelectItem value="outboard">Outboard</SelectItem>
+                    </SelectContent>
+                  </Select>
+                   <Select>
+                    <SelectTrigger className="w-full h-12 bg-white text-black"><SelectValue placeholder="All Engine Manufacturers" /></SelectTrigger>
+                     <SelectContent>
+                       <SelectItem value="mercury">Mercury</SelectItem>
+                       <SelectItem value="yamaha">Yamaha</SelectItem>
+                     </SelectContent>
+                  </Select>
+                  <a href="#" className="text-blue-400 hover:underline">Within 200 Miles of Your Location</a>
+                  <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white">Search</Button>
+                </div>
+                 <div className="pt-4 border-t border-gray-600">
+                    <h3 className="text-lg font-semibold">Sell Your Boat Fast!</h3>
+                    <p className="text-gray-300 my-2">We want you to have options selling your boat. Listing your boat is easy, or get a cash offer!</p>
+                    <Button variant="outline" className="w-full h-12 bg-white text-blue-600 hover:bg-gray-200">Sell Your Boat</Button>
+                 </div>
+              </TabsContent>
+            </div>
+            <div className="md:col-span-2 relative min-h-[400px]">
+              <Image
+                src="https://placehold.co/800x600.png"
+                alt="Tige boat"
+                data-ai-hint="boat lake"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg"
+              />
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-30">
+                <h2 className="text-4xl font-bold">LUXURY THAT PUTS YOU FIRST</h2>
+                <p className="text-2xl my-2">tigé BOATS</p>
+                <Button variant="outline" className="mt-4 bg-transparent border-white text-white hover:bg-white hover:text-black">
+                  EXPLORE TIGÉ >
+                </Button>
               </div>
-              <div className="flex-shrink-0">
-                <Image
-                  src="https://placehold.co/300x200.png"
-                  alt="Boat on a trailer"
-                  data-ai-hint="boat trailer"
-                  width={300}
-                  height={200}
-                  className="rounded-lg shadow-md"
-                />
-              </div>
-            </CardContent>
-          </Card>
+            </div>
+          </Tabs>
         </div>
       </section>
 
       <section className="container mx-auto px-4 py-12 md:py-16">
-        <h2 className="font-headline mb-8 text-center text-3xl font-bold text-primary">Boats Near You</h2>
+        <h2 className="font-headline mb-8 text-center text-3xl font-bold">Boats Near You</h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {featuredBoats.map(boat => (
+          {featuredBots.map(boat => (
             <BoatCard key={boat.id} boat={boat} />
           ))}
         </div>

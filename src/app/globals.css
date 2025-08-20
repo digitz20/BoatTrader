@@ -4,31 +4,53 @@
 
 @layer base {
   :root {
-    --background: 208 48% 14%;
-    --foreground: 0 0% 98%;
-    --card: 208 48% 18%;
-    --card-foreground: 0 0% 98%;
-    --popover: 208 48% 18%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 208 48% 14%;
-    --secondary: 208 48% 22%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 208 48% 22%;
-    --muted-foreground: 208 48% 60%;
-    --accent: 208 48% 30%;
+    --background: 0 0% 100%;
+    --foreground: 224 76% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 76% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 76% 14%;
+    --primary: 215 80% 46%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 224 76% 14%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 224 76% 44%;
+    --accent: 215 80% 46%;
     --accent-foreground: 0 0% 98%;
-    --destructive: 0 63% 31%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 208 48% 25%;
-    --input: 208 48% 25%;
-    --ring: 0 0% 98%;
+    --border: 224 76% 84%;
+    --input: 224 76% 84%;
+    --ring: 224 76% 14%;
     --radius: 0.5rem;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+  }
+ 
+  .dark {
+    --background: 224 76% 14%;
+    --foreground: 0 0% 98%;
+    --card: 224 76% 14%;
+    --card-foreground: 0 0% 98%;
+    --popover: 224 76% 14%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 224 76% 14%;
+    --secondary: 224 76% 24%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 224 76% 24%;
+    --muted-foreground: 0 0% 63%;
+    --accent: 224 76% 34%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 224 76% 24%;
+    --input: 224 76% 24%;
+    --ring: 0 0% 98%;
   }
 }
 
@@ -38,5 +60,6 @@
   }
   body {
     @apply bg-background text-foreground;
+    color: #132536;
   }
 }

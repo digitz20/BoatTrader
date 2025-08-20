@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Ship, Anchor, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { HeroImageCarousel } from '@/components/hero-image-carousel';
 
 export default async function Home() {
   const featuredBoats = (await getBoats()).slice(0, 8);
@@ -146,14 +147,7 @@ export default async function Home() {
               </TabsContent>
             </div>
             <div className="md:col-span-2 relative min-h-[400px]">
-              <Image
-                src="https://servedby.boatsgroup.com/e061c2b61/?libBID=4463621"
-                alt="Tige boat"
-                data-ai-hint="boat lake"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+              <HeroImageCarousel />
             </div>
           </Tabs>
         </div>

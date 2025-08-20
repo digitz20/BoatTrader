@@ -85,7 +85,7 @@ export function RentBoatDialog({ boatPrice, isCard = false }: RentBoatDialogProp
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
-             <RadioGroup defaultValue="hourly" onValueChange={handleRentalTypeChange} className="flex space-x-4">
+             <RadioGroup defaultValue="hourly" onValueChange={handleRentalTypeChange} className="flex justify-center space-x-4">
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="hourly" id="hourly" />
                 <Label htmlFor="hourly">Hourly</Label>
@@ -96,13 +96,13 @@ export function RentBoatDialog({ boatPrice, isCard = false }: RentBoatDialogProp
               </div>
             </RadioGroup>
 
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center px-2">
                 <p className="text-sm font-medium">Rental Rate:</p>
                 <p className="text-sm font-semibold">{formatPrice(rate)} / {rentalType === 'hourly' ? 'hour' : 'day'}</p>
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="duration" className="text-right">
-                {rentalType === 'hourly' ? 'Hours' : 'Days'}
+            <div className="grid grid-cols-5 items-center gap-4">
+              <Label htmlFor="duration" className="text-right col-span-2">
+                {rentalType === 'hourly' ? 'Number of Hours' : 'Number of Days'}
               </Label>
               <Input
                 id="duration"
@@ -115,11 +115,13 @@ export function RentBoatDialog({ boatPrice, isCard = false }: RentBoatDialogProp
               />
             </div>
             {rentalType === 'daily' && (
-              <p className="text-xs text-muted-foreground text-center col-span-4 -mt-2">
-                Maximum rental period is 7 days.
-              </p>
+              <div className="text-center col-span-5">
+                <p className="text-xs text-muted-foreground -mt-2">
+                  Maximum rental period is 7 days.
+                </p>
+              </div>
             )}
-            <div className="flex justify-between items-center text-lg font-bold text-primary">
+            <div className="flex justify-between items-center text-lg font-bold text-primary mt-4">
                 <p>Total Rental Price:</p>
                 <p>{formatPrice(totalPrice)}</p>
             </div>

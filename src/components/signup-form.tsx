@@ -23,15 +23,15 @@ export function SignupForm({ onLoginClick }: { onLoginClick: () => void }) {
         <form onSubmit={handleSignup} className="grid gap-4">
         <div className="grid gap-2">
             <Label htmlFor="first-name">First name</Label>
-            <Input id="first-name" placeholder="Max" required />
+            <Input id="first-name" required />
         </div>
         <div className="grid gap-2">
             <Label htmlFor="last-name">Last name</Label>
-            <Input id="last-name" placeholder="Robinson" required />
+            <Input id="last-name" required />
         </div>
         <div className="grid gap-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="m@example.com" required />
+            <Input id="email" type="email" required />
         </div>
         <div className="grid gap-2">
             <Label htmlFor="password">Password</Label>

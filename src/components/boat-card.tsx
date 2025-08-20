@@ -8,6 +8,7 @@ import { FavoriteButton } from './favorite-button';
 import { Mail } from 'lucide-react';
 import { PaymentOptionsDialog } from './payment-options-dialog';
 import { RentBoatDialog } from './rent-boat-dialog';
+import Image from 'next/image';
 
 interface BoatCardProps {
   boat: Boat;
@@ -28,16 +29,18 @@ export function BoatCard({ boat }: BoatCardProps) {
   return (
     <Card className="group flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-xl">
         <CardHeader className="relative p-0">
-            <div className="aspect-video w-full overflow-hidden">
-                 <img
-                    src={boat.images[0]}
-                    alt={boat.name}
-                    data-ai-hint="boat"
-                    width={400}
-                    height={300}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-            </div>
+            <Link href={`/boats/${boat.id}`}>
+                <div className="aspect-video w-full overflow-hidden">
+                    <Image
+                        src={boat.images[0]}
+                        alt={boat.name}
+                        data-ai-hint="boat"
+                        width={400}
+                        height={300}
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                </div>
+            </Link>
             <div className="absolute right-3 top-3 z-10">
               <FavoriteButton boatId={boat.id} />
             </div>

@@ -52,9 +52,10 @@ interface PaymentOptionsDialogProps {
     open?: boolean;
     onOpenChange?: (open: boolean) => void;
     isTriggered?: boolean;
+    triggerLabel?: string;
 }
 
-export function PaymentOptionsDialog({ open, onOpenChange, isTriggered = false }: PaymentOptionsDialogProps) {
+export function PaymentOptionsDialog({ open, onOpenChange, isTriggered = false, triggerLabel = "Make Payment" }: PaymentOptionsDialogProps) {
   const [view, setView] = useState<"options" | "crypto" | "redirecting">("options");
 
   const handlePaymentSelection = () => {
@@ -79,7 +80,7 @@ export function PaymentOptionsDialog({ open, onOpenChange, isTriggered = false }
     <Dialog {...dialogProps}>
       {!isTriggered && (
         <DialogTrigger asChild>
-            <Button variant="outline" className="w-full">Make Payment</Button>
+            <Button variant="outline" className="w-full">{triggerLabel}</Button>
         </DialogTrigger>
       )}
       <DialogContent className="sm:max-w-md">

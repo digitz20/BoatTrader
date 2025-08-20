@@ -16,11 +16,15 @@ export function HeroImageCarousel() {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        let randomIndex;
+        do {
+            randomIndex = Math.floor(Math.random() * images.length);
+        } while (randomIndex === currentIndex);
+        setCurrentIndex(randomIndex);
     }, 10000); // Change image every 10 seconds
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [currentIndex]);
 
   return (
     <div className="relative w-full h-full overflow-hidden rounded-lg">

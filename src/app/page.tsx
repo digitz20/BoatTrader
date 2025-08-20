@@ -33,25 +33,25 @@ export default async function Home() {
       category: 'buying',
       title: 'Used Center Console Fishing Boats: 5 Best Bets',
       description: 'Buying a used boat? These five center consoles are great options.',
-      image: 'https://images.boattrader.com/resize/wp/43/files/230-outrage-2.jpg?w=702&ratio=default&format=webp&exact'
+      image: 'https://i.pinimg.com/1200x/96/de/84/96de8493bdbffca8d65d6aa2cf85ab17.jpg'
     },
     {
       category: 'boating',
       title: 'Solace 37 Pilot: Flying High',
       description: 'The Solace 37 Pilot is unlike any other pilothouse boat on the water.',
-      image: 'https://images.boattrader.com/resize/wp/43/files/solace-37-pilothouse.jpg?w=702&ratio=default&format=webp&exact'
+      image: 'https://i.pinimg.com/1200x/f7/ee/a2/f7eea23f445a184ed95dfe1d7cb8232d.jpg'
     },
     {
       category: 'boating.boat-engines',
       title: 'New Mercury V10 5.7L 350, 400, and 425 Horsepower Outboards',
       description: 'The world\'s first V10 outboards, the Mercury Verado 350 and 400, just got boosted to 425-hp.',
-      image: 'https://images.boattrader.com/resize/wp/43/files/mercury-425-hp-outboard.jpg?w=702&ratio=default&format=webp&exact'
+      image: 'https://i.pinimg.com/1200x/40/c0/2c/40c02c4f8a0f0a1bd3e5a9c221f19f3f.jpg'
     },
     {
       category: 'boating',
       title: 'Boat Loans With Bad Credit — It\'s Possible',
       description: 'How to get a boat loan even with a poor credit score.',
-      image: 'https://images.boattrader.com/resize/wp/43/files/boat-loans-for-bad-credit-scores.jpeg?w=702&ratio=default&format=webp&exact'
+      image: 'https://i.pinimg.com/736x/df/3c/1f/df3c1f3a8efc2148a03d4a6a915c98e8.jpg'
     }
   ]
 

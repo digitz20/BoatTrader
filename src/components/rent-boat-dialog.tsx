@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { PaymentOptionsDialog } from "./payment-options-dialog";
+import { useToast } from "@/hooks/use-toast";
 
 interface RentBoatDialogProps {
   boatPrice: number;
@@ -30,6 +31,7 @@ export function RentBoatDialog({ boatPrice, isCard = false }: RentBoatDialogProp
   const [rentalType, setRentalType] = useState<"hourly" | "daily">("hourly");
   const [duration, setDuration] = useState(1);
   const [showPaymentDialog, setShowPaymentDialog] = useState(false);
+  const { toast } = useToast();
 
   const rate = rentalType === 'hourly' ? HOURLY_RATE : DAILY_RATE;
   const totalPrice = rate * duration;
@@ -48,12 +50,20 @@ export function RentBoatDialog({ boatPrice, isCard = false }: RentBoatDialogProp
   };
   
   const handleDurationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(e.target.value, 10);
-    if (value > 0) {
-      setDuration(value);
-    } else {
-      setDuration(1);
+    let value = parseInt(e.target.value, 10);
+    if (isNaN(value) || value < 1) {
+      value = 1;
     }
+    
+    if (rentalType === 'daily' && value > 7) {
+      value = 7;
+       toast({
+        title: "Maximum rental period is 7 days.",
+        variant: "destructive",
+      });
+    }
+
+    setDuration(value);
   }
   
   const handleRentalTypeChange = (value: "hourly" | "daily") => {
@@ -101,8 +111,14 @@ export function RentBoatDialog({ boatPrice, isCard = false }: RentBoatDialogProp
                 onChange={handleDurationChange}
                 className="col-span-3"
                 min="1"
+                max={rentalType === 'daily' ? '7' : undefined}
               />
             </div>
+            {rentalType === 'daily' && (
+              <p className="text-xs text-muted-foreground text-center col-span-4 -mt-2">
+                Maximum rental period is 7 days.
+              </p>
+            )}
             <div className="flex justify-between items-center text-lg font-bold text-primary">
                 <p>Total Rental Price:</p>
                 <p>{formatPrice(totalPrice)}</p>

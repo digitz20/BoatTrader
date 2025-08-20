@@ -10,7 +10,7 @@ import { getBoats } from '@/lib/boats';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Heart, Info, Mail, Phone, Ship, User } from 'lucide-react';
+import { ChevronRight, Heart, Info, Mail, Phone, Ship, User, ArrowLeft } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
@@ -25,12 +25,21 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
   const { addViewedBoat, isInitialized } = useViewedBoats();
   const { toast } = useToast();
   const [showMore, setShowMore] = useState(false);
+  const [allBoats, setAllBoats] = useState<Boat[]>([]);
 
   useEffect(() => {
     if (isInitialized) {
       addViewedBoat(boat);
     }
   }, [boat, addViewedBoat, isInitialized]);
+
+  useEffect(() => {
+    async function fetchBoats() {
+      const boats = await getBoats();
+      setAllBoats(boats);
+    }
+    fetchBoats();
+  }, []);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -48,7 +57,7 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
     }).format(price);
   };
   
-  const otherBoatsFromSeller = getBoats().filter(b => b.seller.name === boat.seller.name && b.id !== boat.id).slice(0, 8);
+  const otherBoatsFromSeller = allBoats.filter(b => b.seller.name === boat.seller.name && b.id !== boat.id).slice(0, 8);
 
 
   const boatSpecs = [
@@ -65,7 +74,10 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
   return (
     <div className="container mx-auto max-w-7xl px-4 py-8">
         <nav className="text-sm text-muted-foreground mb-4 flex items-center">
-            <Link href="/" className="hover:text-primary">Search</Link>
+            <Link href="/listings" className="flex items-center hover:text-primary">
+                <ArrowLeft className="h-4 w-4 mr-1" />
+                Back to Listings
+            </Link>
             <ChevronRight className="h-4 w-4 mx-1" />
             <span>{boat.year} {boat.make} {boat.model}</span>
         </nav>
@@ -235,3 +247,5 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
     </div>
   );
 }
+
+    

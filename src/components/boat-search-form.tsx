@@ -21,13 +21,13 @@ export function BoatSearchForm() {
   const router = useRouter();
   const form = useForm<z.infer<typeof searchSchema>>({
     resolver: zodResolver(searchSchema),
-    defaultValues: { query: '', type: '' },
+    defaultValues: { query: '', type: 'all' },
   });
 
   function onSubmit(values: z.infer<typeof searchSchema>) {
     const params = new URLSearchParams();
     if (values.query) params.set('query', values.query);
-    if (values.type) params.set('type', values.type);
+    if (values.type && values.type !== 'all') params.set('type', values.type);
     router.push(`/listings?${params.toString()}`);
   }
 
@@ -57,7 +57,7 @@ export function BoatSearchForm() {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="">All Boat Types</SelectItem>
+                  <SelectItem value="all">All Boat Types</SelectItem>
                   {boatTypes.map(type => (
                     <SelectItem key={type} value={type}>{type}</SelectItem>
                   ))}

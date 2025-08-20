@@ -18,9 +18,10 @@ import { PaymentOptionsDialog } from "./payment-options-dialog";
 
 interface RentBoatDialogProps {
   boatPrice: number;
+  isCard?: boolean;
 }
 
-export function RentBoatDialog({ boatPrice }: RentBoatDialogProps) {
+export function RentBoatDialog({ boatPrice, isCard = false }: RentBoatDialogProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [days, setDays] = useState(1);
   const [showPaymentDialog, setShowPaymentDialog] = useState(false);

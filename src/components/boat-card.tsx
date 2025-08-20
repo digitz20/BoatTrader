@@ -10,6 +10,8 @@ import { Mail } from 'lucide-react';
 import { PaymentOptionsDialog } from './payment-options-dialog';
 import { cn } from '@/lib/utils';
 import { ArrowLeft } from 'lucide-react';
+import { Button } from './ui/button';
+import { RentBoatDialog } from './rent-boat-dialog';
 
 interface BoatCardProps {
   boat: Boat;
@@ -126,7 +128,10 @@ export function BoatCard({ boat }: BoatCardProps) {
                 </div>
               </div>
               <div className="mt-4 border-t pt-4">
-                   <PaymentOptionsDialog />
+                  <div className="flex gap-2">
+                    <PaymentOptionsDialog />
+                    <RentBoatDialog boatPrice={boat.price} isCard={true} />
+                  </div>
                    <p className="text-xs text-muted-foreground mt-2 text-center">
                       After payment, please send proof of receipt to the seller's contact information.
                    </p>

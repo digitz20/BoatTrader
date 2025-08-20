@@ -107,8 +107,12 @@ export function Header() {
             </nav>
 
             <div className="flex items-center justify-end space-x-4">
-                <Button variant="ghost" className="text-base text-foreground">Sign up</Button>
-                <Button variant="ghost" className="text-base text-foreground">Log in</Button>
+                <Button variant="ghost" asChild className="text-base text-foreground">
+                  <Link href="/signup">Sign up</Link>
+                </Button>
+                <Button variant="ghost" asChild className="text-base text-foreground">
+                   <Link href="/login">Log in</Link>
+                </Button>
             </div>
         </div>
 
@@ -158,10 +162,14 @@ export function Header() {
                   </Accordion>
                    <div className="border-t pt-4 space-y-2">
                      <SheetClose asChild>
-                      <Button variant="outline" className="w-full justify-start text-lg">Sign up</Button>
+                       <Link href="/signup" className="w-full inline-block">
+                         <Button variant="outline" className="w-full justify-start text-lg">Sign up</Button>
+                       </Link>
                     </SheetClose>
                     <SheetClose asChild>
-                      <Button variant="outline" className="w-full justify-start text-lg">Log in</Button>
+                       <Link href="/login" className="w-full inline-block">
+                        <Button variant="outline" className="w-full justify-start text-lg">Log in</Button>
+                       </Link>
                     </SheetClose>
                    </div>
                 </div>

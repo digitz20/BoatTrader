@@ -8,9 +8,6 @@ import type { Boat } from '@/lib/types';
 import { FavoriteButton } from './favorite-button';
 import { Mail } from 'lucide-react';
 import { PaymentOptionsDialog } from './payment-options-dialog';
-import { cn } from '@/lib/utils';
-import { ArrowLeft } from 'lucide-react';
-import { Button } from './ui/button';
 import { RentBoatDialog } from './rent-boat-dialog';
 
 interface BoatCardProps {
@@ -18,7 +15,6 @@ interface BoatCardProps {
 }
 
 export function BoatCard({ boat }: BoatCardProps) {
-  const [isImageOpen, setIsImageOpen] = useState(false);
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -30,44 +26,26 @@ export function BoatCard({ boat }: BoatCardProps) {
   
   const mailtoHref = `mailto:mrarnolddavid23@gmail.com?subject=Inquiry about the ${boat.year} ${boat.make} ${boat.model}&body=I'm interested in getting more information about your ${boat.year} ${boat.make} ${boat.model}. Please contact me. Boat ID: ${boat.id}`;
 
-  const handleImageClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsImageOpen(true);
-  };
-
-  const handleClose = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsImageOpen(false);
-  };
 
   return (
-    <>
       <Card className="overflow-hidden transition-shadow duration-300 hover:shadow-xl">
         {/* Mobile view */}
         <div className="md:hidden">
-          <div className="relative">
-            <Link href={`/boats/${boat.id}`}>
-              <div className="cursor-pointer">
-                <img
-                  src={boat.images[0]}
-                  alt={boat.name}
-                  data-ai-hint="boat"
-                  width={400}
-                  height={300}
-                  className="aspect-video w-full object-cover"
-                />
-              </div>
-            </Link>
-            <div className="absolute right-3 top-3">
+          <Link href={`/boats/${boat.id}`} className="block relative">
+            <img
+              src={boat.images[0]}
+              alt={boat.name}
+              data-ai-hint="boat"
+              width={400}
+              height={300}
+              className="aspect-video w-full object-cover"
+            />
+             <div className="absolute right-3 top-3 z-10">
               <FavoriteButton boatId={boat.id} />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 pb-2 text-white">
-              <Link href={`/boats/${boat.id}`}>
-                  <h3 className="mb-1 text-lg font-bold hover:underline">{boat.year} {boat.make} {boat.model}</h3>
-              </Link>
+            <div className="absolute bottom-0 left-0 right-0 p-4 pb-3 text-white">
+              <h3 className="mb-1 text-lg font-bold">{boat.year} {boat.make} {boat.model}</h3>
               <div className="grid grid-cols-3 gap-2 text-xs">
                   <div>
                       <p className="uppercase text-gray-300">Price</p>
@@ -79,11 +57,11 @@ export function BoatCard({ boat }: BoatCardProps) {
                   </div>
                   <div>
                       <p className="uppercase text-gray-300">&nbsp;</p>
-                      <a href={mailtoHref} className="font-semibold hover:underline">Contact Seller</a>
+                      <span className="font-semibold">View Details</span>
                   </div>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
         
         {/* Desktop view */}
@@ -141,30 +119,5 @@ export function BoatCard({ boat }: BoatCardProps) {
             </CardContent>
         </div>
       </Card>
-
-      {isImageOpen && (
-          <div 
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
-              onClick={handleClose}
-          >
-              <button 
-                  className="absolute top-4 left-4 text-white z-60"
-                  onClick={handleClose}
-              >
-                  <ArrowLeft className="h-8 w-8" />
-                  <span className="sr-only">Back</span>
-              </button>
-              
-              <div className="relative max-w-4xl max-h-[90vh] w-full h-full p-4" onClick={(e) => e.stopPropagation()}>
-                  <img
-                      src={boat.images[0]}
-                      alt={`Full screen view of ${boat.name}`}
-                      className="object-contain w-full h-full"
-                      onClick={handleClose}
-                  />
-              </div>
-          </div>
-      )}
-    </>
   );
 }

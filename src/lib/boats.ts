@@ -57,7 +57,7 @@ const boats: Boat[] = [
     make: 'Feadship',
     model: '50m',
     description: 'A classic Feadship with timeless lines and exceptional build quality. This 50m motor yacht has been meticulously maintained and offers a comfortable and elegant interior, perfect for long-range cruising.',
-    images: ['https://images.boattrader.com/resize/1/98/97/1998-feadship-50m-power-9659897-20250120141136242-1_LARGE.jpg?w=326&ratio=default&t=1755530100000&format=webp&exact', 'https://storage.googleapis.com/studioprod/f8776657-61c0-4200-a549-3732d8479e0f.jpg'],
+    images: ['https://images.boattrader.com/resize/1/98/97/1998-feadship-50m-power-9659897-20250120141136242-1_XLARGE.jpg?w=891&ratio=default&t=1737411236000&format=webp&exact', 'https://storage.googleapis.com/studioprod/f8776657-61c0-4200-a549-3732d8479e0f.jpg'],
     seller: { name: 'Coastal Charters', email: 'info@coastalcharters.com', phone: '+1-555-321-9876', address: '789 Dockside Dr, Outer Banks, NC' },
      engine: {
         brand: 'Caterpillar',
@@ -227,5 +227,3 @@ export function filterBoats({ type, query }: { type?: string; query?: string }):
     return typeMatch && queryMatch;
   });
 }
-
-    

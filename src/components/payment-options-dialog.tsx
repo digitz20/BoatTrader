@@ -65,7 +65,7 @@ export function PaymentOptionsDialog() {
                   </DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
-                  <Button variant="outline" className="justify-start">
+                  <Button variant="outline" className="justify-start" onClick={handleUnavailablePayment}>
                     <Landmark className="mr-2 h-4 w-4" /> Bank Transfer
                   </Button>
                   <Button variant="outline" className="justify-start" onClick={handleUnavailablePayment}>
@@ -77,7 +77,7 @@ export function PaymentOptionsDialog() {
                    <Button variant="outline" className="justify-start" onClick={() => setView('crypto')}>
                     <CreditCard className="mr-2 h-4 w-4" /> Pay with Crypto
                   </Button>
-                   <Button variant="outline" className="justify-start">
+                   <Button variant="outline" className="justify-start" onClick={handleUnavailablePayment}>
                     <HelpCircle className="mr-2 h-4 w-4" /> Others
                   </Button>
                 </div>

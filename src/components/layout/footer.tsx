@@ -39,26 +39,26 @@ const companyLinks = {
 
 export function Footer() {
   return (
-    <footer className="border-t bg-gray-50 dark:bg-gray-800">
+    <footer className="border-t bg-primary text-primary-foreground">
       <div className="container py-12 px-4">
         
         <div className="mb-8">
-            <h3 className="font-bold text-lg mb-4 text-center text-primary">Popular Boats</h3>
+            <h3 className="font-bold text-lg mb-4 text-center">Popular Boats</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {Object.entries(popularLinks).map(([title, links]) => (
                 <div key={title}>
-                <h4 className="font-semibold text-primary mb-2">{title}</h4>
+                <h4 className="font-semibold mb-2">{title}</h4>
                 <ul className="space-y-1">
                     {links.slice(0, 12).map(link => (
                     <li key={link}>
-                        <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                        <Link href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
                         {link}
                         </Link>
                     </li>
                     ))}
                     {links.length > 12 && (
                        <li>
-                         <Link href="#" className="text-sm font-semibold text-primary hover:underline">
+                         <Link href="#" className="text-sm font-semibold text-white hover:underline">
                            See More...
                          </Link>
                        </li>
@@ -69,18 +69,18 @@ export function Footer() {
             </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-8 border-t">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-8 border-t border-blue-900">
             <div>
-                <h4 className="font-semibold text-primary mb-4">Connect with Us</h4>
+                <h4 className="font-semibold mb-4">Connect with Us</h4>
                 <div className="flex space-x-4">
-                    <Link href="#"><Facebook className="h-6 w-6 text-muted-foreground hover:text-primary" /></Link>
-                    <Link href="#"><Twitter className="h-6 w-6 text-muted-foreground hover:text-primary" /></Link>
-                    <Link href="#"><Instagram className="h-6 w-6 text-muted-foreground hover:text-primary" /></Link>
-                    <Link href="#"><Youtube className="h-6 w-6 text-muted-foreground hover:text-primary" /></Link>
+                    <Link href="#"><Facebook className="h-6 w-6 text-gray-300 hover:text-white" /></Link>
+                    <Link href="#"><Twitter className="h-6 w-6 text-gray-300 hover:text-white" /></Link>
+                    <Link href="#"><Instagram className="h-6 w-6 text-gray-300 hover:text-white" /></Link>
+                    <Link href="#"><Youtube className="h-6 w-6 text-gray-300 hover:text-white" /></Link>
                 </div>
             </div>
             <div>
-                 <h4 className="font-semibold text-primary mb-4">Download the BoatTrader App</h4>
+                 <h4 className="font-semibold mb-4">Download the BoatTrader App</h4>
                  <div className="flex space-x-2">
                     <Link href="#"><img src="https://placehold.co/120x40.png?text=App+Store" alt="App Store" data-ai-hint="button app store" /></Link>
                     <Link href="#"><img src="https://placehold.co/120x40.png?text=Google+Play" alt="Google Play" data-ai-hint="button google play" /></Link>
@@ -88,14 +88,14 @@ export function Footer() {
             </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t mt-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t mt-8 border-blue-900">
              {Object.entries(companyLinks).map(([title, links]) => (
                 <div key={title}>
-                <h3 className="font-bold text-primary mb-4">{title}</h3>
+                <h3 className="font-bold mb-4">{title}</h3>
                 <ul className="space-y-2">
                     {links.map(link => (
                     <li key={link}>
-                        <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                        <Link href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
                         {link}
                         </Link>
                     </li>
@@ -104,24 +104,24 @@ export function Footer() {
                 </div>
             ))}
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 pt-8 border-t mt-8 text-xs text-muted-foreground">
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 pt-8 border-t mt-8 text-xs text-gray-300 border-blue-900">
              <span>Cookies</span>
-             <Link href="#" className="hover:text-primary">Do Not Sell My Personal Information</Link>
-             <Link href="#" className="hover:text-primary">Community Guidelines</Link>
-             <Link href="#" className="hover:text-primary">Security Center</Link>
-             <Link href="#" className="hover:text-primary">Site Map</Link>
+             <Link href="#" className="hover:text-white">Do Not Sell My Personal Information</Link>
+             <Link href="#" className="hover:text-white">Community Guidelines</Link>
+             <Link href="#" className="hover:text-white">Security Center</Link>
+             <Link href="#" className="hover:text-white">Site Map</Link>
         </div>
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-4 mt-4">
-             <p className="text-xs text-muted-foreground text-center">
+             <p className="text-xs text-gray-300 text-center">
                 Copyright © {new Date().getFullYear()} Boats Group. All Rights Reserved
              </p>
-             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
-                <Link href="#" className="hover:text-primary">Ad and Sponsorship Policy</Link>
-                <Link href="#" className="hover:text-primary">Advertiser Agreement</Link>
-                <Link href="#" className="hover:text-primary">Copyright</Link>
-                <Link href="#" className="hover:text-primary">Privacy Policy</Link>
-                <Link href="#" className="hover:text-primary">Terms of Use</Link>
-                <Link href="#" className="hover:text-primary">AdChoices</Link>
+             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-gray-300">
+                <Link href="#" className="hover:text-white">Ad and Sponsorship Policy</Link>
+                <Link href="#" className="hover:text-white">Advertiser Agreement</Link>
+                <Link href="#" className="hover:text-white">Copyright</Link>
+                <Link href="#" className="hover:text-white">Privacy Policy</Link>
+                <Link href="#" className="hover:text-white">Terms of Use</Link>
+                <Link href="#" className="hover:text-white">AdChoices</Link>
              </div>
         </div>
       </div>

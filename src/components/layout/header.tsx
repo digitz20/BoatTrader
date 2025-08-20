@@ -24,7 +24,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">
       <div className="container flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2 ml-4">
             <span className="font-brand text-3xl font-bold" style={{color: '#132536'}}>Boat Trader</span>
         </Link>
 

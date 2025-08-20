@@ -18,6 +18,7 @@ const nextConfig: NextConfig = {
         'servedbyadbutler.com',
         'images.boattrader.com',
         'www.boattrader.com',
+        'i.pinimg.com',
     ]
   },
 };

@@ -120,7 +120,7 @@ export default async function Home() {
             </div>
             <div className="md:col-span-2 relative min-h-[400px]">
               <Image
-                src="https://placehold.co/800x600.png"
+                src="https://servedby.boatsgroup.com/e061c2b61/?libBID=4463621"
                 alt="Tige boat"
                 data-ai-hint="boat lake"
                 layout="fill"

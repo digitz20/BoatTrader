@@ -11,8 +11,8 @@ import { Ship, Anchor, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
-export default function Home() {
-  const featuredBoats = getBoats().slice(0, 8);
+export default async function Home() {
+  const featuredBoats = (await getBoats()).slice(0, 8);
   
   const featuredBrands = [
     { name: 'Tige', logo: 'https://placehold.co/100x50.png' },
@@ -189,3 +189,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

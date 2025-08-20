@@ -1,14 +1,15 @@
+
 import { getBoatById, getBoats } from '@/lib/boats';
 import { notFound } from 'next/navigation';
 import BoatDetailClient from './boat-detail-client';
 
 export async function generateStaticParams() {
-  const boats = getBoats();
+  const boats = await getBoats();
   return boats.map(boat => ({ id: boat.id }));
 }
 
-export default function BoatDetailPage({ params }: { params: { id: string } }) {
-  const boat = getBoatById(params.id);
+export default async function BoatDetailPage({ params }: { params: { id: string } }) {
+  const boat = await getBoatById(params.id);
 
   if (!boat) {
     notFound();

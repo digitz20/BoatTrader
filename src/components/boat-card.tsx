@@ -1,5 +1,4 @@
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import type { Boat } from '@/lib/types';
@@ -27,7 +26,7 @@ export function BoatCard({ boat }: BoatCardProps) {
     <Card className="overflow-hidden transition-shadow duration-300 hover:shadow-xl">
       <CardHeader className="relative p-0 bg-gray-100">
         <Link href={`/boats/${boat.id}`}>
-          <Image
+          <img
             src={boat.images[0]}
             alt={boat.name}
             data-ai-hint="boat"

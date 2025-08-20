@@ -1,7 +1,6 @@
 
 "use client"
 
-import Image from "next/image";
 import { Card } from "./ui/card";
 
 interface BoatDetailImageGalleryProps {
@@ -15,7 +14,7 @@ export function BoatDetailImageGallery({ images, boatName }: BoatDetailImageGall
     return (
         <div>
             <Card className="overflow-hidden mb-4 bg-gray-100">
-                 <Image 
+                 <img 
                     src={mainImage} 
                     alt={`Main image for ${boatName}`}
                     width={800} 

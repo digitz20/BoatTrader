@@ -202,6 +202,54 @@ Alta Marea’s accommodation offers 3 suites for up to 8 guests, comprising of 1
       power: 320
     }
   },
+  {
+    id: '9',
+    name: '2022 Riva 88 Folgore',
+    type: 'Yacht',
+    class: 'Sport Yacht',
+    price: 8500000,
+    location: 'Sardinia, Italy',
+    year: 2022,
+    length: 88,
+    make: 'Riva',
+    model: '88 Folgore',
+    description: 'The Riva 88 Folgore is a stunning combination of luxury and performance. With its sleek lines and powerful engines, it offers an exhilarating experience on the water.',
+    images: ['https://images.boattrader.com/resize/1/40/85/2022-riva-88-folgore-power-9824085-20250628043652758-1_XLARGE.jpg?w=891&ratio=default&t=1751071238000&format=webp&exact'],
+    seller: { name: 'Mediterranean Yachts', email: 'contact@medyachts.com', phone: '+39-0789-123456', address: 'Porto Cervo, Sardinia, Italy' },
+    engine: { brand: 'MTU', type: '16V 2000 M96L', power: 2638, hours: 300 }
+  },
+  {
+    id: '10',
+    name: '2021 Sunreef 80 Power',
+    type: 'Catamaran',
+    class: 'Power Catamaran',
+    price: 9500000,
+    location: 'Fort Lauderdale, FL',
+    year: 2021,
+    length: 80,
+    make: 'Sunreef',
+    model: '80 Power',
+    description: 'The Sunreef 80 Power is a luxurious and spacious catamaran, offering unparalleled comfort and stability. Its wide beam provides vast living areas, both indoors and out.',
+    images: ['https://images.boattrader.com/resize/1/74/4/2021-sunreef-80-power-power-9817404-20250614061413665-1_XLARGE.jpg?w=891&ratio=default&t=1750017254000&format=webp&exact'],
+    seller: { name: 'The Catamaran Company', email: 'cats@catamarans.com', phone: '+1-555-246-8135', address: '200 Yacht Haven, Fort Lauderdale, FL' },
+    engine: { brand: 'Volvo Penta', type: 'IPS 1200', power: 900, hours: 500 }
+  },
+  {
+    id: '11',
+    name: '2020 Azimut Grande 32 Metri',
+    type: 'Yacht',
+    class: 'Motor Yacht',
+    price: 11000000,
+    location: 'Viareggio, Italy',
+    year: 2020,
+    length: 105,
+    make: 'Azimut',
+    model: 'Grande 32 Metri',
+    description: 'The Azimut Grande 32 Metri is a masterpiece of Italian design, offering a perfect blend of elegance and technology. Its spacious flybridge and beach club are ideal for entertaining guests.',
+    images: ['https://images.boattrader.com/resize/1/36/49/2020-azimut-grande-32-metri-power-9783649-20250503053800680-1_XLARGE.jpg?w=891&ratio=default&t=1746247081000&format=webp&exact'],
+    seller: { name: 'Italian Yacht Group', email: 'sales@iyg.it', phone: '+39-0584-38321', address: 'Via M. Coppino, 443, Viareggio, Italy' },
+    engine: { brand: 'MTU', type: '16V 2000 M86', power: 2200, hours: 800 }
+  }
 ];
 
 export const boatTypes: BoatType[] = ['Sailboat', 'Yacht', 'Fishing Boat', 'Speedboat', 'Catamaran'];

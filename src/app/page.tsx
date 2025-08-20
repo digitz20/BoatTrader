@@ -13,7 +13,7 @@ import { Badge } from '@/components/ui/badge';
 import { HeroImageCarousel } from '@/components/hero-image-carousel';
 
 export default async function Home() {
-  const featuredBoats = (await getBoats()).slice(0, 8);
+  const featuredBoats = (await getBoats()).slice(0, 12);
   
   const featuredBrands = [
     { name: 'Tige', logo: 'https://images.boatsgroup.com/images/1/upload/TigeBoatsLogo.png' },

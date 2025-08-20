@@ -60,9 +60,9 @@ export function BoatCard({ boat }: BoatCardProps) {
               <FavoriteButton boatId={boat.id} />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+            <div className="absolute bottom-0 left-0 right-0 p-4 pb-2 text-white">
               <Link href={`/boats/${boat.id}`}>
-                  <h3 className="mb-2 text-lg font-bold hover:underline">{boat.year} {boat.make} {boat.model}</h3>
+                  <h3 className="mb-1 text-lg font-bold hover:underline">{boat.year} {boat.make} {boat.model}</h3>
               </Link>
               <div className="grid grid-cols-3 gap-2 text-xs">
                   <div>

@@ -2,7 +2,6 @@
 "use client";
 
 import { useState } from "react";
-import QRCode from "qrcode.react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -48,11 +47,8 @@ export function CryptoPayment() {
         <TabsContent key={option.name} value={option.name}>
           <Card>
             <CardContent className="space-y-4 pt-6">
-              <div className="flex justify-center">
-                <QRCode value={option.address} size={160} />
-              </div>
               <p className="text-center text-sm text-muted-foreground">
-                Scan this QR code with your wallet app or copy the address below.
+                Copy the address below.
               </p>
               <div className="flex items-center space-x-2">
                 <Input value={option.address} readOnly />

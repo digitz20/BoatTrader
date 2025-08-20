@@ -31,37 +31,39 @@ export function BoatCard({ boat }: BoatCardProps) {
       <Card className="overflow-hidden transition-shadow duration-300 hover:shadow-xl">
         {/* Mobile view */}
         <div className="md:hidden">
-          <Link href={`/boats/${boat.id}`} className="block relative">
-            <img
-              src={boat.images[0]}
-              alt={boat.name}
-              data-ai-hint="boat"
-              width={400}
-              height={300}
-              className="aspect-video w-full object-cover"
-            />
-             <div className="absolute right-3 top-3 z-10">
-              <FavoriteButton boatId={boat.id} />
+            <div className="relative">
+                <Link href={`/boats/${boat.id}`} className="block">
+                    <img
+                        src={boat.images[0]}
+                        alt={boat.name}
+                        data-ai-hint="boat"
+                        width={400}
+                        height={300}
+                        className="aspect-video w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
+                    <div className="absolute bottom-4 left-0 right-0 p-4 pb-3 text-white">
+                        <h3 className="mb-1 text-lg font-bold">{boat.year} {boat.make} {boat.model}</h3>
+                        <div className="grid grid-cols-3 gap-2 text-xs">
+                            <div>
+                                <p className="uppercase text-gray-300">Price</p>
+                                <p className="font-semibold">{formatPrice(boat.price)}</p>
+                            </div>
+                            <div>
+                                <p className="uppercase text-gray-300">Location</p>
+                                <p className="font-semibold">{boat.location}</p>
+                            </div>
+                            <div>
+                                <p className="uppercase text-gray-300">&nbsp;</p>
+                                <span className="font-semibold">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+                </Link>
+                <div className="absolute right-3 top-3 z-10">
+                    <FavoriteButton boatId={boat.id} />
+                </div>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 pb-3 text-white">
-              <h3 className="mb-1 text-lg font-bold">{boat.year} {boat.make} {boat.model}</h3>
-              <div className="grid grid-cols-3 gap-2 text-xs">
-                  <div>
-                      <p className="uppercase text-gray-300">Price</p>
-                      <p className="font-semibold">{formatPrice(boat.price)}</p>
-                  </div>
-                  <div>
-                      <p className="uppercase text-gray-300">Location</p>
-                      <p className="font-semibold">{boat.location}</p>
-                  </div>
-                  <div>
-                      <p className="uppercase text-gray-300">&nbsp;</p>
-                      <span className="font-semibold">View Details</span>
-                  </div>
-              </div>
-            </div>
-          </Link>
         </div>
         
         {/* Desktop view */}

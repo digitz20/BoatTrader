@@ -201,7 +201,7 @@ export function Header() {
                     <DialogTitle className="text-2xl">Log In</DialogTitle>
                     <DialogDescription>Enter your email below to log in to your account.</DialogDescription>
                 </DialogHeader>
-                <LoginForm onSignupClick={() => setAuthView('signup')} />
+                <LoginForm onLoginSuccess={() => setIsAuthDialogOpen(false)} onSignupClick={() => setAuthView('signup')} />
              </>
            ) : (
               <>

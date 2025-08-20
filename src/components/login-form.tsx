@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
 
-export function LoginForm({ onSignupClick }: { onSignupClick: () => void }) {
+export function LoginForm({ onSignupClick, onLoginSuccess }: { onSignupClick: () => void; onLoginSuccess: () => void; }) {
   const { toast } = useToast();
   const router = useRouter();
 
@@ -17,7 +17,7 @@ export function LoginForm({ onSignupClick }: { onSignupClick: () => void }) {
       title: "Login Successful",
       description: "Welcome back!",
     });
-    // Assuming dialog closes on successful login, handled by parent component
+    onLoginSuccess();
   };
 
   return (

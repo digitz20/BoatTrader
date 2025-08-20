@@ -52,6 +52,12 @@ const nextConfig: NextConfig = {
         hostname: 'www.boattrader.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.boattrader.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

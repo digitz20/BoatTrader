@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Copy, Check } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { ScrollArea } from "./ui/scroll-area";
 
 interface CryptoOption {
   name: string;
@@ -38,13 +39,15 @@ export function CryptoPayment() {
 
   return (
     <Tabs defaultValue="Bitcoin" className="w-full">
-      <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-        {cryptoOptions.map(option => (
-          <TabsTrigger key={option.name} value={option.name}>
-            {option.name}
-          </TabsTrigger>
-        ))}
-      </TabsList>
+      <ScrollArea className="w-full whitespace-nowrap rounded-md">
+        <TabsList className="inline-flex w-max">
+          {cryptoOptions.map(option => (
+            <TabsTrigger key={option.name} value={option.name}>
+              {option.name}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+      </ScrollArea>
       {cryptoOptions.map(option => (
         <TabsContent key={option.name} value={option.name}>
           <Card>

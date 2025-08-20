@@ -11,7 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Landmark, CreditCard, HelpCircle, ArrowLeft, Loader2 } from "lucide-react";
+import { Landmark, CreditCard, HelpCircle, ArrowLeft, Loader2, Send } from "lucide-react";
 import { CryptoPayment } from "./crypto-payment";
 import { Alert, AlertTitle, AlertDescription } from "./ui/alert";
 
@@ -140,8 +140,15 @@ export function PaymentOptionsDialog() {
                     Send your payment to one of the addresses below.
                   </DialogDescription>
                 </DialogHeader>
-                <div className="pt-4">
+                <div className="pt-4 space-y-4">
                     <CryptoPayment />
+                    <Alert>
+                        <Send className="h-4 w-4" />
+                        <AlertTitle>Action Required</AlertTitle>
+                        <AlertDescription>
+                            After payment, please send proof of receipt to the seller's contact information.
+                        </AlertDescription>
+                    </Alert>
                 </div>
             </>
          )}

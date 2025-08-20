@@ -8,9 +8,6 @@ import { cn } from '@/lib/utils';
 const images = [
   'https://servedby.boatsgroup.com/e061c2b61/?libBID=4433508',
   'https://servedby.boatsgroup.com/e061c2b61/?libBID=4463621',
-  'https://servedbyadbutler.com/getad.img/;libID=4598090',
-  'https://images.boatsgroup.com/images/1/upload/kadeykrogennewhero9123.png',
-  'https://images.boatsgroup.com/images/1/upload/hanoverhero41124.png',
   'https://servedby.boatsgroup.com/e061c2b61/?libBID=4601538',
 ];
 

@@ -207,20 +207,6 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
                     </div>
                 </div>
 
-                 <div className="mt-8">
-                     <h2 className="text-2xl font-bold text-primary mb-4">Other Services</h2>
-                     <Card>
-                        <CardContent className="p-6 flex items-center justify-between">
-                            <div>
-                                <h3 className="font-bold">Boat Documentation</h3>
-                                <p className="text-muted-foreground">Ad</p>
-                            </div>
-                            <Image src="https://placehold.co/100x50.png" alt="Ad" width={100} height={50} data-ai-hint="advertisement" />
-                        </CardContent>
-                     </Card>
-                </div>
-
-
             </div>
             <div className="space-y-6">
                 <Card>
@@ -237,9 +223,6 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
                          </Button>
                     </CardContent>
                 </Card>
-                 <Image src="https://placehold.co/300x600.png" width={300} height={600} alt="Ad" className="w-full" data-ai-hint="advertisement" />
-                 <Image src="https://placehold.co/300x250.png" width={300} height={250} alt="Ad" className="w-full" data-ai-hint="advertisement" />
-                 <Image src="https://placehold.co/300x250.png" width={300} height={250} alt="Ad" className="w-full" data-ai-hint="advertisement" />
             </div>
         </div>
     </div>

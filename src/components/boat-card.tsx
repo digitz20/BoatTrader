@@ -68,6 +68,9 @@ export function BoatCard({ boat }: BoatCardProps) {
         </div>
         <div className="mt-4 border-t pt-4">
              <PaymentOptionsDialog />
+             <p className="text-xs text-muted-foreground mt-2 text-center">
+                After payment, please send proof of receipt to the seller's contact information.
+             </p>
         </div>
       </CardContent>
     </Card>

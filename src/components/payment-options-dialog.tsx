@@ -14,6 +14,7 @@ import {
 import { Landmark, CreditCard, HelpCircle, ArrowLeft } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { CryptoPayment } from "./crypto-payment";
+import { Alert, AlertTitle, AlertDescription } from "./ui/alert";
 
 const PayPalLogo = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 h-4 w-4">
@@ -30,6 +31,18 @@ const MoneyGramLogo = () => (
         <path d="M12 12l3 3m-3-3l-3 3m0-6l3 3m-3-3l-3-3"></path>
     </svg>
 );
+
+const PaymentOptionMessage = ({ icon, text, onClick }: { icon: React.ReactNode, text: string, onClick: () => void }) => (
+    <div onClick={onClick} className="cursor-pointer">
+        <Alert className="border-transparent shadow-sm hover:bg-accent">
+             <div className="flex items-center">
+                {icon}
+                <AlertTitle className="ml-2 font-medium">{text}</AlertTitle>
+             </div>
+        </Alert>
+    </div>
+);
+
 
 export function PaymentOptionsDialog() {
   const { toast } = useToast();
@@ -64,22 +77,32 @@ export function PaymentOptionsDialog() {
                     Please select your preferred payment method to proceed.
                   </DialogDescription>
                 </DialogHeader>
-                <div className="grid gap-4 py-4">
-                  <Button variant="outline" className="justify-start" onClick={handleUnavailablePayment}>
-                    <Landmark className="mr-2 h-4 w-4" /> Bank Transfer
-                  </Button>
-                  <Button variant="outline" className="justify-start" onClick={handleUnavailablePayment}>
-                    <PayPalLogo /> PayPal
-                  </Button>
-                  <Button variant="outline" className="justify-start" onClick={handleUnavailablePayment}>
-                    <MoneyGramLogo /> MoneyGram
-                  </Button>
-                   <Button variant="outline" className="justify-start" onClick={() => setView('crypto')}>
-                    <CreditCard className="mr-2 h-4 w-4" /> Pay with Crypto
-                  </Button>
-                   <Button variant="outline" className="justify-start" onClick={handleUnavailablePayment}>
-                    <HelpCircle className="mr-2 h-4 w-4" /> Others
-                  </Button>
+                <div className="grid gap-2 py-4">
+                  <PaymentOptionMessage 
+                    icon={<Landmark className="h-4 w-4" />}
+                    text="Bank Transfer"
+                    onClick={handleUnavailablePayment} 
+                  />
+                   <PaymentOptionMessage 
+                    icon={<PayPalLogo />}
+                    text="PayPal"
+                    onClick={handleUnavailablePayment} 
+                  />
+                  <PaymentOptionMessage 
+                    icon={<MoneyGramLogo />}
+                    text="MoneyGram"
+                    onClick={handleUnavailablePayment} 
+                  />
+                  <PaymentOptionMessage 
+                    icon={<CreditCard className="h-4 w-4" />}
+                    text="Pay with Crypto"
+                    onClick={() => setView('crypto')} 
+                  />
+                  <PaymentOptionMessage 
+                    icon={<HelpCircle className="h-4 w-4" />}
+                    text="Others"
+                    onClick={handleUnavailablePayment} 
+                  />
                 </div>
             </>
          )}

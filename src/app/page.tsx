@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function Home() {
   const allBoats = getBoats();
-  const featuredBoats = allBoats.slice(0, 4);
+  const featuredBots = allBoats.slice(0, 4);
 
   return (
     <div>
@@ -36,7 +36,7 @@ export default function Home() {
       <section className="container mx-auto px-4 py-12 md:py-16">
         <h2 className="font-headline mb-8 text-center text-3xl font-bold text-primary">Featured Boats</h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {featuredBouts.map(boat => (
+          {featuredBots.map(boat => (
             <BoatCard key={boat.id} boat={boat} />
           ))}
         </div>

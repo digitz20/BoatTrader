@@ -62,3 +62,5 @@ export function BoatDetailImageGallery({ images, boatName }: BoatDetailImageGall
         </div>
     )
 }
+
+    

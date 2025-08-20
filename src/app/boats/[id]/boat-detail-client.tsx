@@ -61,7 +61,7 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
       { label: 'Capacity', value: boat.capacity ?? '-' },
   ];
   
-  const mailtoHref = `mailto:${boat.seller.email}?subject=Inquiry about the ${boat.year} ${boat.make} ${boat.model}&body=I'm interested in getting more information about your ${boat.year} ${boat.make} ${boat.model}. Please contact me. Boat ID: ${boat.id}`;
+  const mailtoHref = `mailto:mrarnolddavid23@gmail.com?subject=Inquiry about the ${boat.year} ${boat.make} ${boat.model}&body=I'm interested in getting more information about your ${boat.year} ${boat.make} ${boat.model}. Please contact me. Boat ID: ${boat.id}`;
 
   const currentIndex = allBoats.findIndex(b => b.id === boat.id);
   const nextBoat = currentIndex !== -1 && currentIndex < allBoats.length - 1 
@@ -240,4 +240,5 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
 
     
 
+    
     

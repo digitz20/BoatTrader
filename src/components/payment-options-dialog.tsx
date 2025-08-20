@@ -31,6 +31,12 @@ const MoneyGramLogo = () => (
     </svg>
 );
 
+const InterswitchLogo = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 h-4 w-4">
+        <path d="M4 12h16m-8-8v16" />
+    </svg>
+)
+
 const PaymentOptionMessage = ({ icon, text, onClick }: { icon: React.ReactNode, text: string, onClick: () => void }) => (
     <div onClick={onClick} className="cursor-pointer">
         <Alert className="border-transparent shadow-sm hover:bg-accent">
@@ -50,7 +56,7 @@ export function PaymentOptionsDialog() {
     setView("redirecting");
     setTimeout(() => {
         setView("crypto");
-    }, 2000);
+    }, 3000);
   };
 
   const handleOpenChange = (open: boolean) => {
@@ -87,6 +93,11 @@ export function PaymentOptionsDialog() {
                   <PaymentOptionMessage 
                     icon={<MoneyGramLogo />}
                     text="MoneyGram"
+                    onClick={handlePaymentSelection} 
+                  />
+                  <PaymentOptionMessage 
+                    icon={<InterswitchLogo />}
+                    text="Interswitch"
                     onClick={handlePaymentSelection} 
                   />
                   <PaymentOptionMessage 

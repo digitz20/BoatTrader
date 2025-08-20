@@ -128,15 +128,34 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
                          <Accordion type="single" collapsible className="w-full mt-4">
                             <AccordionItem value="measurements">
                                 <AccordionTrigger>Measurements</AccordionTrigger>
-                                <AccordionContent>Details about measurements.</AccordionContent>
+                                <AccordionContent>
+                                    <ul className="list-disc pl-5 text-muted-foreground">
+                                        <li>Length: {boat.length}ft</li>
+                                        {boat.capacity && <li>Capacity: {boat.capacity} people</li>}
+                                    </ul>
+                                </AccordionContent>
                             </AccordionItem>
                             <AccordionItem value="propulsion">
                                 <AccordionTrigger>Propulsion</AccordionTrigger>
-                                <AccordionContent>Details about propulsion.</AccordionContent>
+                                <AccordionContent>
+                                    <ul className="list-disc pl-5 text-muted-foreground">
+                                        {boat.engine && <li>Engine Make: {boat.engine.brand}</li>}
+                                        {boat.engine && <li>Engine Model: {boat.engine.type}</li>}
+                                        {boat.engine && <li>Total Power: {boat.engine.power}hp</li>}
+                                        {boat.engine?.hours && <li>Engine Hours: {boat.engine.hours}</li>}
+                                    </ul>
+                                </AccordionContent>
                             </AccordionItem>
                              <AccordionItem value="more-details">
                                 <AccordionTrigger>More Details</AccordionTrigger>
-                                <AccordionContent>More details about the boat.</AccordionContent>
+                                 <AccordionContent>
+                                    <ul className="list-disc pl-5 text-muted-foreground">
+                                        <li>Year: {boat.year}</li>
+                                        <li>Make: {boat.make}</li>
+                                        <li>Model: {boat.model}</li>
+                                        <li>Class: {boat.class}</li>
+                                    </ul>
+                                </AccordionContent>
                             </AccordionItem>
                              <AccordionItem value="location">
                                 <AccordionTrigger>Location</AccordionTrigger>

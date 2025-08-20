@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { PaymentOptionsDialog } from "./payment-options-dialog";
 
 interface RentBoatDialogProps {
@@ -21,13 +22,17 @@ interface RentBoatDialogProps {
   isCard?: boolean;
 }
 
+const HOURLY_RATE = 100;
+const DAILY_RATE = 2000;
+
 export function RentBoatDialog({ boatPrice, isCard = false }: RentBoatDialogProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [days, setDays] = useState(1);
+  const [rentalType, setRentalType] = useState<"hourly" | "daily">("hourly");
+  const [duration, setDuration] = useState(1);
   const [showPaymentDialog, setShowPaymentDialog] = useState(false);
 
-  const dailyRate = boatPrice * 0.05;
-  const totalPrice = dailyRate * days;
+  const rate = rentalType === 'hourly' ? HOURLY_RATE : DAILY_RATE;
+  const totalPrice = rate * duration;
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -42,13 +47,18 @@ export function RentBoatDialog({ boatPrice, isCard = false }: RentBoatDialogProp
     setShowPaymentDialog(true);
   };
   
-  const handleDaysChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleDurationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value, 10);
     if (value > 0) {
-      setDays(value);
+      setDuration(value);
     } else {
-      setDays(1);
+      setDuration(1);
     }
+  }
+  
+  const handleRentalTypeChange = (value: "hourly" | "daily") => {
+    setRentalType(value);
+    setDuration(1); // Reset duration when type changes
   }
 
   return (
@@ -61,23 +71,34 @@ export function RentBoatDialog({ boatPrice, isCard = false }: RentBoatDialogProp
           <DialogHeader>
             <DialogTitle>Rent this Boat</DialogTitle>
             <DialogDescription>
-              Calculate your rental price based on the number of days.
+              Calculate your rental price based on hours or days.
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
+             <RadioGroup defaultValue="hourly" onValueChange={handleRentalTypeChange} className="flex space-x-4">
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="hourly" id="hourly" />
+                <Label htmlFor="hourly">Hourly</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="daily" id="daily" />
+                <Label htmlFor="daily">Daily</Label>
+              </div>
+            </RadioGroup>
+
             <div className="flex justify-between items-center">
-                <p className="text-sm font-medium">Daily Rental Rate:</p>
-                <p className="text-sm font-semibold">{formatPrice(dailyRate)} (5% of purchase price)</p>
+                <p className="text-sm font-medium">Rental Rate:</p>
+                <p className="text-sm font-semibold">{formatPrice(rate)} / {rentalType === 'hourly' ? 'hour' : 'day'}</p>
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="days" className="text-right">
-                Days
+              <Label htmlFor="duration" className="text-right">
+                {rentalType === 'hourly' ? 'Hours' : 'Days'}
               </Label>
               <Input
-                id="days"
+                id="duration"
                 type="number"
-                value={days}
-                onChange={handleDaysChange}
+                value={duration}
+                onChange={handleDurationChange}
                 className="col-span-3"
                 min="1"
               />

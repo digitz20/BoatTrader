@@ -74,7 +74,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background">
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2 ml-4">
-            <span className="font-brand text-3xl font-bold italic" style={{color: '#132536'}}>Boat Trader</span>
+            <span className="font-brand text-3xl font-bold" style={{color: '#132536'}}>Boat Trader</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -126,9 +126,9 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <SheetHeader className="sr-only">
-                <SheetTitle>Menu</SheetTitle>
-                <SheetDescription>Main navigation menu for Boat Trader</SheetDescription>
+              <SheetHeader>
+                <SheetTitle className="sr-only">Menu</SheetTitle>
+                <SheetDescription className="sr-only">Main navigation menu for Boat Trader</SheetDescription>
               </SheetHeader>
               <div className="p-4">
                  <Link href="/" className="flex items-center space-x-2 mb-8">

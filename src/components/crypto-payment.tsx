@@ -19,6 +19,7 @@ const cryptoOptions: CryptoOption[] = [
   { name: "Ethereum / ERC20", address: "0x328bEaba35Eb07C1D4C82b19cE36A7345ED52C54" },
   { name: "USDT (TRC20)", address: "THycvE5TKFTLv4nZsq8SJJCYhDmvysSLyk" },
   { name: "Solana", address: "Gc1Xak8dXJY7h6G8XXMefa9BaiT8VMEsm6G4DXMzyCaX" },
+  { name: "BNB Smart Chain", address: "0x328bEaba35Eb07C1D4C82b19cE36A7345ED52C54" },
 ];
 
 export function CryptoPayment() {
@@ -37,7 +38,7 @@ export function CryptoPayment() {
 
   return (
     <Tabs defaultValue="Bitcoin" className="w-full">
-      <TabsList className="grid w-full grid-cols-4">
+      <TabsList className="grid w-full grid-cols-3 md:grid-cols-5">
         {cryptoOptions.map(option => (
           <TabsTrigger key={option.name} value={option.name}>
             {option.name}

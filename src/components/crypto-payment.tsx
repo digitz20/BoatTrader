@@ -48,7 +48,7 @@ export function CryptoPayment() {
       {cryptoOptions.map(option => (
         <TabsContent key={option.name} value={option.name}>
           <Card>
-            <CardContent className="space-y-4 pt-6">
+            <CardContent className="space-y-6 pt-6">
               <p className="text-center text-sm text-muted-foreground">
                 Copy the address below.
               </p>

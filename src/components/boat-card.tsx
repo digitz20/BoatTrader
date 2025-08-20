@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -20,7 +21,7 @@ export function BoatCard({ boat }: BoatCardProps) {
 
   return (
     <Card className="overflow-hidden transition-shadow duration-300 hover:shadow-xl">
-      <CardHeader className="relative p-0">
+      <CardHeader className="relative p-0 bg-gray-100">
         <Link href={`/boats/${boat.id}`}>
           <Image
             src={boat.images[0]}
@@ -28,7 +29,7 @@ export function BoatCard({ boat }: BoatCardProps) {
             data-ai-hint="boat"
             width={400}
             height={300}
-            className="aspect-video w-full object-cover"
+            className="aspect-video w-full object-contain"
           />
         </Link>
         <div className="absolute right-3 top-3">

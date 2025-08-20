@@ -163,7 +163,7 @@ export default async function Home() {
           {recentArticles.map((article, index) => (
             <Card key={index} className="overflow-hidden">
               <CardHeader className="p-0">
-                <Image src={article.image} alt={article.title} width={400} height={300} className="w-full h-auto" data-ai-hint="boat sailing" />
+                <Image src={article.image} alt={article.title} width={400} height={300} className="w-full h-auto object-cover" data-ai-hint="boat sailing" />
               </CardHeader>
               <CardContent className="p-4">
                 <Badge variant="secondary" className="mb-2">{article.category}</Badge>

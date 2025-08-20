@@ -160,7 +160,7 @@ export default async function Home() {
       </section>
 
       <section className="container mx-auto px-4 py-12 md:py-16">
-        <h2 className="font-headline mb-8 text-center text-3xl font-bold text-primary">Boats Near You</h2>
+        <h2 className="font-headline mb-8 text-center text-3xl font-bold text-primary">boats near you based on your location</h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {featuredBoats.map(boat => (
             <BoatCard key={boat.id} boat={boat} />

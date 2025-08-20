@@ -1,5 +1,4 @@
 
-import { Sailboat } from "lucide-react";
 import Link from "next/link";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
@@ -32,7 +31,7 @@ const footerLinks = {
 };
 
 const companyLinks = {
-    "Explore AquaFind": ["Boats for Sale", "Outboard Motors & Engines", "Boat Trailers", "Boat Research", "Boating Lifestyle Calculator", "About AquaFind"],
+    "Explore Boat Trader": ["Boats for Sale", "Outboard Motors & Engines", "Boat Trailers", "Boat Research", "Boating Lifestyle Calculator", "About Boat Trader"],
     "Sell Your Boat": ["Private Sellers", "Dealers", "My Boats"],
     "Finance": ["Boat Loans", "Boat Loan Calculator", "Boat Loan Rates", "FAQ - How to Finance"],
     "Services": ["Extended Service Plan", "Tire & Wheel Plan", "GAP Protection", "Roadside Assistance", "Boat Insurance", "Boat Transport", "Boat Warranty", "Boat Documentation", "Boat Rental", "Become a Member"],
@@ -76,11 +75,10 @@ export function Footer() {
         </div>
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-8 border-t mt-8">
             <div className="flex items-center gap-2">
-                 <Sailboat className="h-8 w-8 text-primary" />
-                <span className="text-xl font-bold text-primary">AquaFind</span>
+                <span className="text-xl font-bold text-primary">Boat Trader</span>
             </div>
              <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} AquaFind. All Rights Reserved.
+                © {new Date().getFullYear()} Boat Trader. All Rights Reserved.
             </p>
         </div>
       </div>

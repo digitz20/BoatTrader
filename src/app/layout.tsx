@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Header } from '@/components/layout/header';
@@ -5,8 +6,8 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'AquaFind',
-  description: 'Find your next boat with AquaFind',
+  title: 'Boat Trader',
+  description: 'Find your next boat with Boat Trader',
 };
 
 export default function RootLayout({

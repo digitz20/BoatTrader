@@ -1,8 +1,9 @@
+
 "use client";
 
 import { useState, useEffect, useCallback } from 'react';
 
-const FAVORITES_KEY = 'aquaFindFavorites';
+const FAVORITES_KEY = 'boatTraderFavorites';
 
 export const useFavorites = () => {
   const [favorites, setFavorites] = useState<string[]>([]);

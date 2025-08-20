@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useFavorites } from '@/hooks/use-favorites';
-import { Heart, Sailboat, UserCircle } from 'lucide-react';
+import { Heart, UserCircle } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,6 +14,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { AiRecommendations } from '../ai-recommendations';
 
 
 export function Header() {
@@ -32,8 +33,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <Sailboat className="h-8 w-8 text-primary" />
-          <span className="text-2xl font-bold sm:inline-block font-headline text-primary">AquaFind</span>
+          <span className="text-2xl font-bold sm:inline-block font-headline text-primary">Boat Trader</span>
         </Link>
         
         <nav className="hidden items-center space-x-4 lg:flex">
@@ -47,6 +47,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center justify-end space-x-2">
+           <AiRecommendations />
            <Button variant="ghost" size="icon" asChild>
             <Link href="/favorites" className="relative">
               <Heart className="h-6 w-6"/>

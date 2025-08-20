@@ -1,9 +1,10 @@
+
 "use client";
 
 import { useState, useEffect, useCallback } from 'react';
 import type { Boat } from '@/lib/types';
 
-const VIEWED_BOATS_KEY = 'aquaFindViewedBoats';
+const VIEWED_BOATS_KEY = 'boatTraderViewedBoats';
 const MAX_VIEWED_BOATS = 10;
 
 export const useViewedBoats = () => {

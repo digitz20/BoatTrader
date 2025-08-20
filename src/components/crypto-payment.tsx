@@ -16,7 +16,7 @@ interface CryptoOption {
 }
 
 const cryptoOptions: CryptoOption[] = [
-  { name: "Bitcoin", address: "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh" },
+  { name: "Bitcoin", address: "bc1qqku6e3qxyhlv5fvjaxazt0v5f5mf77lzt0ymm0" },
   { name: "Ethereum", address: "0x32Be343B94f860124dC4fEe278FDCBD38C102D88" },
   { name: "USDT (TRC20)", address: "TBE2BJMnaFupTQD1gT4aKkkm2k5gWb9a2" },
 ];

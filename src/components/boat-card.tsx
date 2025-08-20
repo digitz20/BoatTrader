@@ -28,16 +28,16 @@ export function BoatCard({ boat }: BoatCardProps) {
   return (
     <Card className="group flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-xl">
         <CardHeader className="relative p-0">
-            <Link href={`/boats/${boat.id}`} aria-label={`View details for ${boat.name}`}>
-                <img
+            <div className="aspect-video w-full overflow-hidden">
+                 <img
                     src={boat.images[0]}
                     alt={boat.name}
                     data-ai-hint="boat"
                     width={400}
                     height={300}
-                    className="aspect-video w-full object-cover"
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-            </Link>
+            </div>
             <div className="absolute right-3 top-3 z-10">
               <FavoriteButton boatId={boat.id} />
             </div>

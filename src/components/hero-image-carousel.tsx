@@ -10,6 +10,9 @@ const images = [
   'https://servedby.boatsgroup.com/e061c2b61/?libBID=4463621',
   'https://images.boattrader.com/resize/1/11/13/9031113_20230906080646186_1_LARGE.jpg?w=800&h=600&t=1736521177000&exact',
   'https://servedbyadbutler.com/getad.img/;libID=4598090',
+  'https://images.boatsgroup.com/images/1/upload/kadeykrogennewhero9123.png',
+  'https://images.boatsgroup.com/images/1/upload/hanoverhero41124.png',
+  'https://servedby.boatsgroup.com/e061c2b61/?libBID=4601538',
 ];
 
 export function HeroImageCarousel() {

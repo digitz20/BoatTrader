@@ -142,6 +142,9 @@ export function PaymentOptionsDialog() {
                 </DialogHeader>
                 <div className="pt-4 space-y-4">
                     <CryptoPayment />
+                     <p className="text-xs text-muted-foreground mt-2 text-center">
+                        After payment, please send proof of receipt to the seller's contact information.
+                     </p>
                 </div>
             </>
          )}

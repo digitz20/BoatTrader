@@ -16,7 +16,7 @@ interface CryptoOption {
 }
 
 const cryptoOptions: CryptoOption[] = [
-  { name: "Bitcoin", address: "bc1qqku6e3qxyhlv5fvjaxazt0v5f5mf77lzt0ymm0" },
+  { name: "BTC", address: "bc1qqku6e3qxyhlv5fvjaxazt0v5f5mf77lzt0ymm0" },
   { name: "ETH/ERC20", address: "0x328bEaba35Eb07C1D4C82b19cE36A7345ED52C54" },
   { name: "USDT (TRC20)", address: "THycvE5TKFTLv4nZsq8SJJCYhDmvysSLyk" },
   { name: "Sol", address: "Gc1Xak8dXJY7h6G8XXMefa9BaiT8VMEsm6G4DXMzyCaX" },
@@ -38,7 +38,7 @@ export function CryptoPayment() {
   };
 
   return (
-    <Tabs defaultValue="Bitcoin" className="w-full">
+    <Tabs defaultValue="BTC" className="w-full">
       <ScrollArea className="w-full whitespace-nowrap rounded-md">
         <TabsList className="inline-flex w-max">
           {cryptoOptions.map(option => (

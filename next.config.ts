@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'images.boattrader.com',
+        hostname: 'images.boatsgroup.com',
         port: '',
         pathname: '/**',
       },
@@ -37,25 +37,19 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'images.boatsgroup.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
         hostname: 'servedbyadbutler.com',
         port: '',
         pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'www.boattrader.com',
+        hostname: 'images.boattrader.com',
         port: '',
         pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'images.boattrader.com',
+        hostname: 'www.boattrader.com',
         port: '',
         pathname: '/**',
       }

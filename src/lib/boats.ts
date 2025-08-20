@@ -210,7 +210,7 @@ export function getBoats(): Boat[] {
   return boats;
 }
 
-export async function getBoatById(id: string | undefined): Promise<Boat | undefined> {
+export function getBoatById(id: string | undefined): Boat | undefined {
   if (!id) return undefined;
   return boats.find(boat => boat.id === id);
 }
@@ -227,3 +227,5 @@ export function filterBoats({ type, query }: { type?: string; query?: string }):
     return typeMatch && queryMatch;
   });
 }
+
+    

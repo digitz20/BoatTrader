@@ -34,11 +34,8 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
   }, [boat, addViewedBoat, isInitialized]);
 
   useEffect(() => {
-    async function fetchBoats() {
-      const boats = await getBoats();
-      setAllBoats(boats);
-    }
-    fetchBoats();
+    const boats = getBoats();
+    setAllBoats(boats);
   }, []);
 
   const formatPrice = (price: number) => {
@@ -65,6 +62,12 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
   
   const mailtoHref = `mailto:mrarnolddavid23@gmail.com?subject=Inquiry about the ${boat.year} ${boat.make} ${boat.model}&body=I'm interested in getting more information about your ${boat.year} ${boat.make} ${boat.model}. Please contact me. Boat ID: ${boat.id}`;
 
+  const currentIndex = allBoats.findIndex(b => b.id === boat.id);
+  const nextBoat = currentIndex !== -1 && currentIndex < allBoats.length - 1 
+    ? allBoats[currentIndex + 1] 
+    : allBoats[0];
+  const nextBoatId = nextBoat?.id;
+
   return (
     <div className="container mx-auto max-w-7xl px-4 py-8">
         <nav className="text-sm text-muted-foreground mb-4 flex items-center">
@@ -83,7 +86,11 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
             </div>
             <div className="flex gap-2">
                 <FavoriteButton boatId={boat.id} />
-                <Button variant="outline">Next Boat <ChevronRight className="ml-2 h-4 w-4" /></Button>
+                {nextBoatId && (
+                    <Button asChild variant="outline">
+                        <Link href={`/boats/${nextBoatId}`}>Next Boat <ChevronRight className="ml-2 h-4 w-4" /></Link>
+                    </Button>
+                )}
             </div>
         </div>
         
@@ -228,3 +235,5 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
     </div>
   );
 }
+
+    

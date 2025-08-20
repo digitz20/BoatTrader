@@ -4,12 +4,12 @@ import { notFound } from 'next/navigation';
 import BoatDetailClient from './boat-detail-client';
 
 export async function generateStaticParams() {
-  const boats = await getBoats();
+  const boats = getBoats();
   return boats.map(boat => ({ id: boat.id }));
 }
 
-export default async function BoatDetailPage({ params }: { params: { id: string } }) {
-  const boat = await getBoatById(params.id);
+export default function BoatDetailPage({ params }: { params: { id: string } }) {
+  const boat = getBoatById(params.id);
 
   if (!boat) {
     notFound();
@@ -17,3 +17,5 @@ export default async function BoatDetailPage({ params }: { params: { id: string 
   
   return <BoatDetailClient boat={boat} />;
 }
+
+    

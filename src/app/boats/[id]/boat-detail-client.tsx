@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import type { Boat } from '@/lib/types';
 import { useViewedBoats } from '@/hooks/use-viewed-boats';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
@@ -10,7 +11,8 @@ import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 import { FavoriteButton } from '@/components/favorite-button';
 import { ContactSellerDialog } from '@/components/contact-seller-dialog';
-import { Calendar, DollarSign, Mail, MapPin, Phone, Ruler, Ship } from 'lucide-react';
+import { ArrowLeft, Calendar, DollarSign, Mail, MapPin, Phone, Ruler, Ship } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function BoatDetailClient({ boat }: { boat: Boat }) {
   const { addViewedBoat, isInitialized } = useViewedBoats();
@@ -39,6 +41,14 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
 
   return (
     <div className="container mx-auto max-w-6xl px-4 py-8">
+      <div className="mb-6">
+        <Button asChild variant="ghost">
+          <Link href="/" className="flex items-center text-sm text-muted-foreground hover:text-primary">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Listings
+          </Link>
+        </Button>
+      </div>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         <div className="md:col-span-2">
            <Carousel className="w-full">

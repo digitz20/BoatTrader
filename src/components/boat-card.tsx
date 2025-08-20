@@ -28,6 +28,50 @@ export function BoatCard({ boat }: BoatCardProps) {
 
   return (
     <Card className="group flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+      {/* Mobile Layout */}
+      <div className="md:hidden">
+        <Link href={`/boats/${boat.id}`}>
+          <CardHeader className="relative p-0 h-48">
+            <Image
+              src={boat.images[0]}
+              alt={boat.name}
+              data-ai-hint="boat"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+             <div className="absolute right-3 top-3 z-10">
+              <FavoriteButton boatId={boat.id} />
+            </div>
+            <div className="absolute bottom-0 p-4">
+              <h3 className="font-semibold text-white">
+                {boat.year} {boat.make} {boat.model}
+              </h3>
+            </div>
+          </CardHeader>
+        </Link>
+        <CardContent className="p-4">
+            <div className="grid grid-cols-3 gap-4 text-sm">
+                <div>
+                    <p className="text-xs text-muted-foreground">PRICE</p>
+                    <p className="font-semibold text-primary">{formatPrice(boat.price)}</p>
+                </div>
+                <div>
+                    <p className="text-xs text-muted-foreground">LOCATION</p>
+                    <p className="font-semibold text-primary truncate">{boat.location.split(',')[0]}</p>
+                </div>
+                <div>
+                    <a href={mailtoHref} className="flex flex-col items-start font-semibold text-primary hover:underline">
+                         <span className="text-xs text-muted-foreground">CONTACT</span>
+                         <span>Contact Seller</span>
+                    </a>
+                </div>
+            </div>
+        </CardContent>
+      </div>
+
+      {/* Desktop Layout */}
+      <div className="hidden md:flex md:flex-col md:flex-1">
         <CardHeader className="relative p-0">
             <Link href={`/boats/${boat.id}`}>
                 <div className="aspect-video w-full overflow-hidden">
@@ -80,6 +124,7 @@ export function BoatCard({ boat }: BoatCardProps) {
                 </p>
             </div>
         </CardContent>
+      </div>
     </Card>
   );
 }

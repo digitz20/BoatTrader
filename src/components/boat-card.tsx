@@ -1,10 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import type { Boat } from '@/lib/types';
 import { FavoriteButton } from './favorite-button';
-import { Calendar, MapPin, Ruler } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 interface BoatCardProps {
   boat: Boat;
@@ -35,27 +34,31 @@ export function BoatCard({ boat }: BoatCardProps) {
         <div className="absolute right-3 top-3">
           <FavoriteButton boatId={boat.id} />
         </div>
-        <Badge className="absolute bottom-3 left-3">{boat.type}</Badge>
       </CardHeader>
       <CardContent className="p-4">
         <Link href={`/boats/${boat.id}`}>
-          <CardTitle className="mb-2 truncate text-xl font-bold text-primary hover:underline">
-            {boat.name}
-          </CardTitle>
+          <p className="mb-2 truncate font-semibold text-primary hover:underline">
+            {boat.year} {boat.make} {boat.model}
+          </p>
         </Link>
-        <p className="mb-2 text-2xl font-semibold text-accent">{formatPrice(boat.price)}</p>
-        <div className="space-y-2 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <MapPin className="h-4 w-4" />
-            <span>{boat.location}</span>
+        <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+          <div>
+            <p className="text-xs text-muted-foreground">PRICE</p>
+            <p className="font-semibold text-primary">{formatPrice(boat.price)}</p>
           </div>
-          <div className="flex items-center gap-2">
-            <Calendar className="h-4 w-4" />
-            <span>{boat.year}</span>
+          <div>
+            <p className="text-xs text-muted-foreground">LOCATION</p>
+            <p className="font-semibold text-primary">{boat.location}</p>
           </div>
-          <div className="flex items-center gap-2">
-            <Ruler className="h-4 w-4" />
-            <span>{boat.length} ft</span>
+           <div>
+            <p className="text-xs text-muted-foreground">OFFERED BY</p>
+            <p className="font-semibold text-primary">{boat.seller.name}</p>
+          </div>
+          <div>
+            <p className="text-xs text-muted-foreground">&nbsp;</p>
+            <Link href="#" className="flex items-center font-semibold text-primary hover:underline">
+                <Mail className="mr-2 h-4 w-4" /> Contact Seller
+            </Link>
           </div>
         </div>
       </CardContent>

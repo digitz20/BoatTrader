@@ -54,6 +54,35 @@ export default async function Home() {
     }
   ]
 
+  const boatTypesForSearch = [
+    'Yacht', 'Sailboat', 'Fishing Boat', 'Speedboat', 'Catamaran', 'Pontoon', 'Jet Ski', 'Houseboat', 'Trawler', 'Cabin Cruiser',
+    'Bowrider', 'Center Console', 'Cuddy Cabin', 'Deck Boat', 'Dinghy', 'High Performance', 'Inflatable', 'Jon Boat', 'Lifeboat', 'Motor Yacht',
+    'Multi-Hull', 'Pilothouse', 'Runabout', 'Ski and Wakeboard', 'Sport Fisherman', 'Superyacht', 'Tender', 'Tugboat', 'Utility', 'Walkaround',
+    'Classic', 'Convertible', 'Cruiser', 'Downeast', 'Express Cruiser', 'Flybridge', 'Mega Yacht', 'Sedan Bridge', 'Skiff', 'Bay Boat'
+  ];
+
+  const boatManufacturers = [
+    'Sea Ray', 'Boston Whaler', 'Grady-White', 'Beneteau', 'Jeanneau', 'Bavaria', 'Lagoon', 'Fountaine Pajot', 'Leopard', 'Sunseeker',
+    'Princess', 'Azimut', 'Ferretti', 'Riva', 'Hatteras', 'Viking', 'Bertram', 'Tiara', 'Regal', 'Chaparral',
+    'Cobalt', 'MasterCraft', 'Nautique', 'Malibu', 'Axis', 'Tracker', 'Ranger', 'Lund', 'Alumacraft', 'Crestliner',
+    'Bayliner', 'Four Winns', 'Glastron', 'Wellcraft', 'Scout', 'Key West', 'Robalo', 'Pursuit', 'Contender', 'Intrepid'
+  ];
+
+  const engineTypes = [
+    'Inboard', 'Outboard', 'Sterndrive', 'Jet Drive', 'Pod Drive', 'Surface Drive', 'Electric', 'Hybrid', 'Gasoline', 'Diesel',
+    'V-Drive', 'Direct Drive', 'Forward Drive', '2-Stroke', '4-Stroke', 'EFI', 'MPI', 'Carbureted', 'Supercharged', 'Turbocharged',
+    'Air Cooled', 'Water Cooled', 'Raw Water Cooled', 'Closed Cooling', 'Single Prop', 'Dual Prop', 'Counter-Rotating', 'Verado', 'SHO', 'E-TEC',
+    'HPDI', 'DFI', 'TDI', 'Common Rail', 'Mechanical Injection', 'Hydraulic', 'Saildrive', 'Z-Drive', 'IPS', 'Zeus'
+  ];
+
+  const engineManufacturers = [
+    'Mercury', 'Yamaha', 'Evinrude', 'Honda', 'Suzuki', 'Tohatsu', 'Volvo Penta', 'MerCruiser', 'Crusader', 'Indmar',
+    'PCM', 'Ilmor', 'Caterpillar', 'Cummins', 'MAN', 'MTU', 'Yanmar', 'Beta Marine', 'Nanni Diesel', 'Westerbeke',
+    'Perkins', 'Scania', 'FPT', 'Steyr', 'Torqeedo', 'Elco', 'Vetus', 'Lombardini', 'Sole Diesel', 'Bukh',
+    'Minn Kota', 'MotorGuide', 'Rotax', 'Kawasaki', 'Sea-Doo', 'Kodiak', 'Marine Power', 'Rolls-Royce', 'ZF Marine', 'Twin Disc'
+  ];
+
+
   return (
     <div>
       <section style={{backgroundColor: '#132536'}}>
@@ -75,15 +104,14 @@ export default async function Home() {
                     <SelectTrigger className="w-full h-12 bg-white text-black"><SelectValue placeholder="All Boat Types" /></SelectTrigger>
                     <SelectContent>
                       <SelectItem value="all">All Boat Types</SelectItem>
-                      <SelectItem value="yacht">Yacht</SelectItem>
-                      <SelectItem value="sailboat">Sailboat</SelectItem>
+                      {boatTypesForSearch.map(type => <SelectItem key={type} value={type.toLowerCase()}>{type}</SelectItem>)}
                     </SelectContent>
                   </Select>
                    <Select>
                     <SelectTrigger className="w-full h-12 bg-white text-black"><SelectValue placeholder="All Boat Manufacturers" /></SelectTrigger>
                      <SelectContent>
-                       <SelectItem value="sunseeker">Sunseeker</SelectItem>
-                       <SelectItem value="beneteau">Beneteau</SelectItem>
+                       <SelectItem value="all">All Boat Manufacturers</SelectItem>
+                       {boatManufacturers.map(m => <SelectItem key={m} value={m.toLowerCase()}>{m}</SelectItem>)}
                      </SelectContent>
                   </Select>
                   <a href="#" className="text-blue-400 hover:underline">Within 200 Miles of Your Location</a>
@@ -97,15 +125,14 @@ export default async function Home() {
                     <SelectTrigger className="w-full h-12 bg-white text-black"><SelectValue placeholder="All Engine Types" /></SelectTrigger>
                     <SelectContent>
                       <SelectItem value="all">All Engine Types</SelectItem>
-                      <SelectItem value="inboard">Inboard</SelectItem>
-                      <SelectItem value="outboard">Outboard</SelectItem>
+                      {engineTypes.map(type => <SelectItem key={type} value={type.toLowerCase()}>{type}</SelectItem>)}
                     </SelectContent>
                   </Select>
                    <Select>
                     <SelectTrigger className="w-full h-12 bg-white text-black"><SelectValue placeholder="All Engine Manufacturers" /></SelectTrigger>
                      <SelectContent>
-                       <SelectItem value="mercury">Mercury</SelectItem>
-                       <SelectItem value="yamaha">Yamaha</SelectItem>
+                       <SelectItem value="all">All Engine Manufacturers</SelectItem>
+                       {engineManufacturers.map(m => <SelectItem key={m} value={m.toLowerCase()}>{m}</SelectItem>)}
                      </SelectContent>
                   </Select>
                   <a href="#" className="text-blue-400 hover:underline">Within 200 Miles of Your Location</a>

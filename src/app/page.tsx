@@ -127,13 +127,6 @@ export default async function Home() {
                 objectFit="cover"
                 className="rounded-lg"
               />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-30">
-                <h2 className="text-4xl font-bold">LUXURY THAT PUTS YOU FIRST</h2>
-                <p className="text-2xl my-2">tigé BOATS</p>
-                <Button variant="outline" className="mt-4 bg-transparent border-white text-white hover:bg-white hover:text-black">
-                  EXPLORE TIGÉ >
-                </Button>
-              </div>
             </div>
           </Tabs>
         </div>

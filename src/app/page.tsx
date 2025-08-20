@@ -15,16 +15,16 @@ export default async function Home() {
   const featuredBoats = (await getBoats()).slice(0, 8);
   
   const featuredBrands = [
-    { name: 'Tige', logo: 'https://placehold.co/100x50.png' },
-    { name: 'Neptunus Yachts', logo: 'https://placehold.co/100x50.png' },
-    { name: 'Horizon Yachts', logo: 'https://placehold.co/100x50.png' },
-    { name: 'Wajer', logo: 'https://placehold.co/100x50.png' },
-    { name: 'ATX Surf Boats', logo: 'https://placehold.co/100x50.png' },
-    { name: 'Krogen Yachts', logo: 'https://placehold.co/100x50.png' },
-    { name: 'Centurion', logo: 'https://placehold.co/100x50.png' },
-    { name: 'Aviara', logo: 'https://placehold.co/100x50.png' },
-    { name: 'Hanover Yachts', logo: 'https://placehold.co/100x50.png' },
-    { name: 'Intrepid', logo: 'https://placehold.co/100x50.png' },
+    { name: 'Tige', logo: 'https://images.boatsgroup.com/images/1/upload/TigeBoatsLogo.png' },
+    { name: 'Neptunus Yachts', logo: 'https://images.boatsgroup.com/images/1/upload/NBEPYUNUS-LOGO-BLUE.png' },
+    { name: 'Horizon Yachts', logo: 'https://images.boatsgroup.com/images/1/upload/Horizon.png' },
+    { name: 'Wajer', logo: 'https://images.boatsgroup.com/images/1/upload/WajerLogo43025.png' },
+    { name: 'ATX Surf Boats', logo: 'https://images.boatsgroup.com/images/1/upload/ATX-Surf-Boats-Brand-Showroom-Logo.png' },
+    { name: 'Krogen Yachts', logo: 'https://images.boatsgroup.com/resize/1/upload/KrogenYachts+Logo7292025.png' },
+    { name: 'Centurion', logo: 'https://images.boatsgroup.com/images/1/upload/Evolvedcenturionlogo32725.png' },
+    { name: 'Aviara', logo: 'https://images.boatsgroup.com/images/1/upload/logo_aviara21.png' },
+    { name: 'Hanover Yachts', logo: 'https://images.boatsgroup.com/images/1/upload/Hanover+YACHTS+logo+VECTOR+blue.png' },
+    { name: 'Intrepid', logo: 'https://images.boatsgroup.com/images/1/upload/Intrepid_LogoImage.png' },
   ]
 
   const recentArticles = [

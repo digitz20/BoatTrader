@@ -34,6 +34,12 @@ const nextConfig: NextConfig = {
         hostname: 'servedby.boatsgroup.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.boatsgroup.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

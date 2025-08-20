@@ -41,9 +41,9 @@ export function CryptoPayment() {
     <Tabs defaultValue="BTC" className="w-full">
       <div className="flex justify-center">
         <ScrollArea className="w-full max-w-full whitespace-nowrap rounded-md">
-          <TabsList className="inline-flex w-auto justify-center">
+          <TabsList className="inline-flex h-auto w-auto justify-center gap-1">
             {cryptoOptions.map(option => (
-              <TabsTrigger key={option.name} value={option.name} className="px-2 sm:px-3">
+              <TabsTrigger key={option.name} value={option.name} className="px-3 py-1.5">
                 {option.name}
               </TabsTrigger>
             ))}
@@ -70,3 +70,4 @@ export function CryptoPayment() {
     </Tabs>
   );
 }
+

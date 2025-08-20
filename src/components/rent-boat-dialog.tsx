@@ -85,7 +85,7 @@ export function RentBoatDialog({ boatPrice, isCard = false }: RentBoatDialogProp
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
-             <RadioGroup defaultValue="hourly" onValueChange={handleRentalTypeChange} className="flex justify-center space-x-4">
+             <RadioGroup defaultValue="hourly" value={rentalType} onValueChange={handleRentalTypeChange} className="flex justify-center space-x-4">
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="hourly" id="hourly" />
                 <Label htmlFor="hourly">Hourly</Label>
@@ -100,8 +100,8 @@ export function RentBoatDialog({ boatPrice, isCard = false }: RentBoatDialogProp
                 <p className="text-sm font-medium">Rental Rate:</p>
                 <p className="text-sm font-semibold">{formatPrice(rate)} / {rentalType === 'hourly' ? 'hour' : 'day'}</p>
             </div>
-            <div className="grid grid-cols-5 items-center gap-4">
-              <Label htmlFor="duration" className="text-right col-span-2">
+            <div className="flex items-center gap-4">
+              <Label htmlFor="duration" className="whitespace-nowrap">
                 {rentalType === 'hourly' ? 'Number of Hours' : 'Number of Days'}
               </Label>
               <Input
@@ -109,14 +109,14 @@ export function RentBoatDialog({ boatPrice, isCard = false }: RentBoatDialogProp
                 type="number"
                 value={duration}
                 onChange={handleDurationChange}
-                className="col-span-3"
+                className="w-full"
                 min="1"
                 max={rentalType === 'daily' ? '7' : undefined}
               />
             </div>
             {rentalType === 'daily' && (
-              <div className="text-center col-span-5">
-                <p className="text-xs text-muted-foreground -mt-2">
+              <div className="text-center -mt-2">
+                <p className="text-xs text-muted-foreground">
                   Maximum rental period is 7 days.
                 </p>
               </div>

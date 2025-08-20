@@ -88,8 +88,8 @@ export default async function Home() {
     <div>
       <section style={{backgroundColor: '#132536'}}>
         <div className="container mx-auto px-4 py-8 text-white">
-          <Tabs defaultValue="boats" className="grid grid-cols-1 md:grid-cols-5 gap-8">
-            <div className="md:col-span-2 pt-6">
+          <Tabs defaultValue="boats" className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="md:col-span-1 pt-6">
                <TabsList className="grid w-full grid-cols-2 bg-transparent p-0">
                 <TabsTrigger value="boats" className="flex gap-2 items-center data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-blue-500 data-[state=active]:text-white rounded-none">
                   <Ship /> Boats
@@ -146,7 +146,7 @@ export default async function Home() {
                  </div>
               </TabsContent>
             </div>
-            <div className="md:col-span-3 relative min-h-[400px]">
+            <div className="md:col-span-2 relative min-h-[400px]">
               <HeroImageCarousel />
             </div>
           </Tabs>

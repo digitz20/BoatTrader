@@ -69,6 +69,8 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
     : allBoats[0];
   const nextBoatId = nextBoat?.id;
 
+  const monthlyPayment = boat.price * 0.125;
+
   return (
     <div className="container mx-auto max-w-7xl px-4 py-8">
         <nav className="text-sm text-muted-foreground mb-4 flex items-center">
@@ -197,8 +199,8 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
                         </form>
                         <div className="mt-6 bg-gray-50 p-4 rounded-lg text-center">
                             <p className="text-muted-foreground">Here is what your monthly payment might look like:</p>
-                            <p className="text-3xl font-bold text-primary">$10,623.90</p>
-                            <p className="text-sm text-muted-foreground">TOTAL LOAN AMOUNT $1,398,306</p>
+                            <p className="text-3xl font-bold text-primary">{formatPrice(monthlyPayment)}</p>
+                            <p className="text-sm text-muted-foreground">TOTAL LOAN AMOUNT {formatPrice(boat.price * 0.8)}</p>
                             <p className="text-xs text-muted-foreground mt-2">See Important Disclosure</p>
                         </div>
                     </CardContent>
@@ -241,4 +243,6 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
     
 
     
+    
+
     

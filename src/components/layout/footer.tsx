@@ -82,8 +82,8 @@ export function Footer() {
             <div>
                  <h4 className="font-semibold mb-4">Download the BoatTrader App</h4>
                  <div className="flex space-x-2">
-                    <Link href="#"><img src="https://placehold.co/120x40.png?text=App+Store" alt="App Store" data-ai-hint="button app store" /></Link>
-                    <Link href="#"><img src="https://placehold.co/120x40.png?text=Google+Play" alt="Google Play" data-ai-hint="button google play" /></Link>
+                    <Link href="#"><img src="https://www.boattrader.com/static/legacy/img/icons/app-store.svg" alt="App Store" /></Link>
+                    <Link href="#"><img src="https://www.boattrader.com/static/legacy/img/icons/google-play.svg" alt="Google Play" /></Link>
                  </div>
             </div>
         </div>

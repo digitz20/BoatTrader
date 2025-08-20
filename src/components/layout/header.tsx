@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { ChevronDown, Menu, Ship } from 'lucide-react';
 import { Button } from '../ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '../ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle, SheetDescription } from '../ui/sheet';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
 
 export function Header() {
@@ -126,6 +126,10 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Menu</SheetTitle>
+                <SheetDescription className="sr-only">Main navigation menu for Boat Trader</SheetDescription>
+              </SheetHeader>
               <div className="p-4">
                  <Link href="/" className="flex items-center space-x-2 mb-8">
                     <Ship className="h-8 w-8 text-primary" />

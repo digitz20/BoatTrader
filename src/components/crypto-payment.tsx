@@ -38,7 +38,7 @@ export function CryptoPayment() {
 
   return (
     <Tabs defaultValue="Bitcoin" className="w-full">
-      <TabsList className="grid w-full grid-cols-3 md:grid-cols-5">
+      <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {cryptoOptions.map(option => (
           <TabsTrigger key={option.name} value={option.name}>
             {option.name}

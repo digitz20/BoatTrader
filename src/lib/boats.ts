@@ -15,7 +15,7 @@ const boats: Boat[] = [
     make: 'Sunseeker',
     model: '131 Yacht',
     description: 'This Sunseeker 131 is a masterpiece of design and engineering. She offers a spacious and luxurious interior with accommodation for up to 12 guests in 5 cabins. Her sleek lines and powerful engines ensure an unforgettable cruising experience.',
-    images: ['https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png'],
+    images: ['https://images.boattrader.com/resize/1/46/74/8834674_20230502094212953_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/46/74/8834674_20230502094213619_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/46/74/8834674_20230502094214227_1_LARGE.jpg'],
     seller: { name: 'Prestige Marine', email: 'contact@prestigemarine.net', phone: '+1-555-987-6543', address: '456 Marina Bay, Miami, FL' },
     engine: {
         brand: 'MTU',
@@ -36,7 +36,7 @@ const boats: Boat[] = [
     make: 'Pershing',
     model: '115',
     description: 'A true icon of performance and style. The Pershing 115 combines the thrill of a sports car with the luxury of a superyacht. With a top speed of over 50 knots, she is sure to turn heads wherever she goes.',
-    images: ['https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png'],
+    images: ['https://images.boattrader.com/resize/1/15/5/7431505_20200508080922818_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/15/5/7431505_20200508080931584_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/15/5/7431505_20200508080929891_1_LARGE.jpg'],
     seller: { name: 'Oceanic Yachts', email: 'sales@oceanicyachts.com', phone: '+1-555-123-4567', address: '123 Ocean Ave, Newport, RI' },
     engine: {
         brand: 'MTU',
@@ -57,7 +57,7 @@ const boats: Boat[] = [
     make: 'Feadship',
     model: '50m',
     description: 'A classic Feadship with timeless lines and exceptional build quality. This 50m motor yacht has been meticulously maintained and offers a comfortable and elegant interior, perfect for long-range cruising.',
-    images: ['https://placehold.co/800x600.png', 'https://placehold.co/800x600.png'],
+    images: ['https://images.boattrader.com/resize/1/65/29/9046529_20231013003056073_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/65/29/9046529_20231013003102341_1_LARGE.jpg'],
     seller: { name: 'Coastal Charters', email: 'info@coastalcharters.com', phone: '+1-555-321-9876', address: '789 Dockside Dr, Outer Banks, NC' },
      engine: {
         brand: 'Caterpillar',
@@ -78,7 +78,7 @@ const boats: Boat[] = [
     make: 'Formula',
     model: '380 Super Sport Crossover',
     description: 'The Formula 380 Super Sport Crossover is a new breed of boat that combines the comfort of a cruiser with the performance of a sport boat. She is perfect for entertaining and enjoying a day on the water.',
-    images: ['https://placehold.co/800x600.png', 'https://placehold.co/800x600.png'],
+    images: ['https://images.boattrader.com/resize/1/96/9/9009609_20230911075306915_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/96/9/9009609_20230911075313364_1_LARGE.jpg'],
     seller: { name: 'Tahoe Power Sports', email: 'sales@tahoepower.com', phone: '+1-555-555-1212', address: '101 Lakeside Blvd, Lake Tahoe, CA' },
     engine: {
         brand: 'Mercury Racing',
@@ -99,7 +99,7 @@ const boats: Boat[] = [
     make: 'Marquis',
     model: '630 Sport Yacht',
     description: 'This Marquis 630 Sport Yacht is a stunning example of Italian design and American craftsmanship. She features a spacious and open layout with 3 staterooms and 2 heads, perfect for cruising with family and friends.',
-    images: ['https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png'],
+    images: ['https://images.boattrader.com/resize/1/51/71/8995171_20230823055340112_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/51/71/8995171_20230823055346419_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/51/71/8995171_20230823055353151_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/51/71/8995171_20230823055400511_1_LARGE.jpg'],
     seller: { name: 'The Catamaran Company', email: 'cats@catamarans.com', phone: '+1-555-246-8135', address: '200 Yacht Haven, Fort Lauderdale, FL' },
     engine: {
         brand: 'Volvo Penta',
@@ -120,7 +120,7 @@ const boats: Boat[] = [
     make: 'Monte Carlo Yachts',
     model: 'MCY 96',
     description: 'The MCY 96 is a stunning yacht with a modern and elegant design. She features a spacious flybridge with a jacuzzi, a large salon, and a full-beam master stateroom. She is perfect for entertaining and cruising in style.',
-    images: ['https://placehold.co/800x600.png', 'https://placehold.co/800x600.png'],
+    images: ['https://images.boattrader.com/resize/1/32/30/8473230_20220623120155169_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/32/30/8473230_20220623120202996_1_LARGE.jpg'],
     seller: { name: 'Chesapeake Bay Yachts', email: 'sales@cbyachts.com', phone: '+1-555-135-7924', address: '300 Severn Ave, Annapolis, MD' },
     engine: {
         brand: 'MAN',
@@ -141,7 +141,7 @@ const boats: Boat[] = [
     make: 'Powerplay Catamarans',
     model: '58',
     description: 'A custom-built power catamaran that combines performance and comfort. She offers a spacious and open layout with a large flybridge, perfect for entertaining and enjoying the outdoors.',
-    images: ['https://placehold.co/800x600.png'],
+    images: ['https://images.boattrader.com/resize/1/86/67/8338667_20220317071629237_1_LARGE.jpg'],
     seller: { name: 'Reel Time Brokers', email: 'sales@reeltime.com', phone: '+1-555-246-8135', address: '400 Caroline St, Key West, FL' },
     engine: {
         brand: 'Yanmar',
@@ -162,7 +162,7 @@ const boats: Boat[] = [
     make: 'Benetti',
     model: 'Delfino 93',
     description: 'This Benetti Delfino 93 is a beautiful and elegant yacht with a classic design. She offers a spacious interior with accommodation for up to 10 guests in 5 cabins. Her large sundeck is perfect for relaxing and enjoying the views.',
-    images: ['https://placehold.co/800x600.png', 'https://placehold.co/800x600.png'],
+    images: ['https://images.boattrader.com/resize/1/83/70/8728370_20230209124233719_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/83/70/8728370_20230209124240752_1_LARGE.jpg'],
     seller: { name: 'West Coast Yachts', email: 'info@wcyachts.com', phone: '+1-555-975-3186', address: '500 Harbor Island Dr, San Diego, CA' },
     engine: {
         brand: 'MTU',
@@ -188,7 +188,7 @@ Alta Marea is the embodiment of Dutch quality, synonymous with premium handcraft
 
 Alta Marea’s accommodation offers 3 suites for up to 8 guests, comprising of 1 owners cabin and 2 twin cabins with Pullman. She is also capable of carrying up to 3 crew onboard to ensure a relaxed luxury yacht experience.`,
     images: [
-      'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png', 'https://placehold.co/800x600.png'
+      'https://images.boattrader.com/resize/1/25/71/8412571_20220516053358053_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053401569_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053404772_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053408082_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053412351_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053415486_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053418538_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053421528_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053424479_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053427771_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053430855_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053434190_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053437197_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053440187_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053443152_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053446187_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053449372_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053452425_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053455325_1_LARGE.jpg', 'https://images.boattrader.com/resize/1/25/71/8412571_20220516053458231_1_LARGE.jpg'
     ],
     seller: {
       name: 'Northrop and Johnson (Palma)',
@@ -214,7 +214,7 @@ Alta Marea’s accommodation offers 3 suites for up to 8 guests, comprising of 1
     make: 'Riva',
     model: '88 Folgore',
     description: 'The Riva 88 Folgore is a stunning combination of luxury and performance. With its sleek lines and powerful engines, it offers an exhilarating experience on the water.',
-    images: ['https://placehold.co/800x600.png'],
+    images: ['https://images.boattrader.com/resize/1/73/45/9017345_20230919072421396_1_LARGE.jpg'],
     seller: { name: 'Mediterranean Yachts', email: 'contact@medyachts.com', phone: '+39-0789-123456', address: 'Porto Cervo, Sardinia, Italy' },
     engine: { brand: 'MTU', type: '16V 2000 M96L', power: 2638, hours: 300 }
   },
@@ -230,7 +230,7 @@ Alta Marea’s accommodation offers 3 suites for up to 8 guests, comprising of 1
     make: 'Sunreef',
     model: '80 Power',
     description: 'The Sunreef 80 Power is a luxurious and spacious catamaran, offering unparalleled comfort and stability. Its wide beam provides vast living areas, both indoors and out.',
-    images: ['https://placehold.co/800x600.png'],
+    images: ['https://images.boattrader.com/resize/1/20/86/8572086_20220907083021966_1_LARGE.jpg'],
     seller: { name: 'The Catamaran Company', email: 'cats@catamarans.com', phone: '+1-555-246-8135', address: '200 Yacht Haven, Fort Lauderdale, FL' },
     engine: { brand: 'Volvo Penta', type: 'IPS 1200', power: 900, hours: 500 }
   },
@@ -246,7 +246,7 @@ Alta Marea’s accommodation offers 3 suites for up to 8 guests, comprising of 1
     make: 'Azimut',
     model: 'Grande 32 Metri',
     description: 'The Azimut Grande 32 Metri is a masterpiece of Italian design, offering a perfect blend of elegance and technology. Its spacious flybridge and beach club are ideal for entertaining guests.',
-    images: ['https://placehold.co/800x600.png'],
+    images: ['https://images.boattrader.com/resize/1/67/62/8716762_20230131034342332_1_LARGE.jpg'],
     seller: { name: 'Italian Yacht Group', email: 'sales@iyg.it', phone: '+39-0584-38321', address: 'Via M. Coppino, 443, Viareggio, Italy' },
     engine: { brand: 'MTU', type: '16V 2000 M86', power: 2200, hours: 800 }
   }

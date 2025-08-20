@@ -43,7 +43,7 @@ export function Footer() {
       <div className="container py-12 px-4">
         
         <div className="mb-8">
-            <h3 className="font-bold text-lg mb-4 text-center">Popular Boats</h3>
+            <h3 className="font-bold text-lg mb-4 text-center text-primary">Popular Boats</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {Object.entries(popularLinks).map(([title, links]) => (
                 <div key={title}>

@@ -57,7 +57,7 @@ export default function Home() {
   return (
     <div>
       <section style={{backgroundColor: '#132536'}}>
-        <div className="container mx-auto px-4 text-white">
+        <div className="container mx-auto px-4 py-8 text-white">
           <Tabs defaultValue="boats" className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="md:col-span-1 pt-6">
                <TabsList className="grid w-full grid-cols-2 bg-transparent p-0">
@@ -140,7 +140,7 @@ export default function Home() {
       </section>
 
       <section className="container mx-auto px-4 py-12 md:py-16">
-        <h2 className="font-headline mb-8 text-center text-3xl font-bold">Boats Near You</h2>
+        <h2 className="font-headline mb-8 text-center text-3xl font-bold text-primary">Boats Near You</h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {featuredBoats.map(boat => (
             <BoatCard key={boat.id} boat={boat} />
@@ -150,7 +150,7 @@ export default function Home() {
 
       <section className="bg-gray-50 py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <h2 className="font-headline mb-8 text-center text-3xl font-bold">Featured Brands Offering New Boats</h2>
+          <h2 className="font-headline mb-8 text-center text-3xl font-bold text-primary">Featured Brands Offering New Boats</h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
             {featuredBrands.map(brand => (
               <div key={brand.name} className="flex justify-center">
@@ -165,7 +165,7 @@ export default function Home() {
       </section>
 
       <section className="container mx-auto px-4 py-12 md:py-16">
-        <h2 className="font-headline mb-8 text-center text-3xl font-bold">Recent Articles and Reviews</h2>
+        <h2 className="font-headline mb-8 text-center text-3xl font-bold text-primary">Recent Articles and Reviews</h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {recentArticles.map((article, index) => (
             <Card key={index} className="overflow-hidden">
@@ -174,7 +174,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="p-4">
                 <Badge variant="secondary" className="mb-2">{article.category}</Badge>
-                <CardTitle className="text-lg font-bold hover:underline">
+                <CardTitle className="text-lg font-bold text-primary hover:underline">
                   <Link href="#">{article.title}</Link>
                 </CardTitle>
                 <p className="text-muted-foreground text-sm mt-2">{article.description}</p>

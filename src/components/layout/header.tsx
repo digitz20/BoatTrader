@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import Link from 'next/link';
@@ -34,18 +33,22 @@ export function Header() {
             item.dropdown ? (
               <DropdownMenu key={item.name}>
                 <DropdownMenuTrigger asChild>
-                   <Button variant="ghost" className="flex items-center gap-1 text-base">
+                   <Button variant="ghost" className="flex items-center gap-1 text-base text-foreground">
                     {item.name} <ChevronDown className="h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                  <DropdownMenuItem>Item 1</DropdownMenuItem>
-                  <DropdownMenuItem>Item 2</DropdownMenuItem>
+                  <DropdownMenuItem>Boats For Sale</DropdownMenuItem>
+                  <DropdownMenuItem>New Boats</DropdownMenuItem>
+                  <DropdownMenuItem>Boat Types</DropdownMenuItem>
+                  <DropdownMenuItem>Boat Dealers</DropdownMenuItem>
+                  <DropdownMenuItem>Outboard Motors & Engines</DropdownMenuItem>
+                  <DropdownMenuItem>Boat Trailers</DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
               <Button key={item.name} variant="ghost" asChild>
-                <Link href={item.href} className="text-base font-medium">
+                <Link href={item.href} className="text-base font-medium text-foreground">
                   {item.name}
                 </Link>
               </Button>
@@ -54,8 +57,8 @@ export function Header() {
         </nav>
 
         <div className="flex items-center justify-end space-x-4">
-           <Button variant="ghost" className="text-base">Sign up</Button>
-           <Button variant="ghost" className="text-base">Log in</Button>
+           <Button variant="ghost" className="text-base text-foreground">Sign up</Button>
+           <Button variant="ghost" className="text-base text-foreground">Log in</Button>
         </div>
       </div>
     </header>

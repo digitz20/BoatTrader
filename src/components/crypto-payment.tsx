@@ -39,25 +39,27 @@ export function CryptoPayment() {
 
   return (
     <Tabs defaultValue="BTC" className="w-full">
-      <ScrollArea className="w-full whitespace-nowrap rounded-md">
-        <TabsList className="inline-flex w-max">
-          {cryptoOptions.map(option => (
-            <TabsTrigger key={option.name} value={option.name}>
-              {option.name}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-      </ScrollArea>
+      <div className="flex justify-center">
+        <ScrollArea className="w-full max-w-full whitespace-nowrap rounded-md">
+          <TabsList className="inline-flex w-auto justify-center">
+            {cryptoOptions.map(option => (
+              <TabsTrigger key={option.name} value={option.name} className="px-2 sm:px-3">
+                {option.name}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </ScrollArea>
+      </div>
       {cryptoOptions.map(option => (
         <TabsContent key={option.name} value={option.name}>
           <Card>
-            <CardContent className="space-y-6 pt-6">
+            <CardContent className="space-y-4 pt-6">
               <p className="text-center text-sm text-muted-foreground">
                 Copy the address below.
               </p>
-              <div className="flex items-center space-x-2">
-                <Input value={option.address} readOnly />
-                <Button variant="outline" size="icon" onClick={() => handleCopy(option.address)}>
+              <div className="relative">
+                 <Input value={option.address} readOnly className="pr-12 text-center text-xs sm:text-sm"/>
+                 <Button variant="ghost" size="icon" className="absolute top-1/2 right-1 -translate-y-1/2 h-8 w-8" onClick={() => handleCopy(option.address)}>
                   {copiedAddress === option.address ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
                 </Button>
               </div>

@@ -19,6 +19,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { BoatCard } from '@/components/boat-card';
 import { FavoriteButton } from '@/components/favorite-button';
 import { BoatDetailImageGallery } from '@/components/boat-detail-image-gallery';
+import { PaymentOptionsDialog } from '@/components/payment-options-dialog';
 
 
 export default function BoatDetailClient({ boat }: { boat: Boat }) {
@@ -224,10 +225,11 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
                             <p>{boat.seller.phone}</p>
                         </CardDescription>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="space-y-2">
                          <Button asChild className="w-full">
                            <a href={mailtoHref}>Contact Seller</a>
                          </Button>
+                         <PaymentOptionsDialog />
                     </CardContent>
                 </Card>
             </div>

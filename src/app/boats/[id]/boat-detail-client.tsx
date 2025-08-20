@@ -74,9 +74,9 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
   return (
     <div className="container mx-auto max-w-7xl px-4 py-8">
         <nav className="text-sm text-muted-foreground mb-4 flex items-center">
-            <Link href="/listings" className="flex items-center hover:text-primary">
+            <Link href="/" className="flex items-center hover:text-primary">
                 <ArrowLeft className="h-4 w-4 mr-1" />
-                Back to Listings
+                Back to Home
             </Link>
             <ChevronRight className="h-4 w-4 mx-1" />
             <span>{boat.year} {boat.make} {boat.model}</span>
@@ -247,5 +247,7 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
     </div>
   );
 }
+
+    
 
     

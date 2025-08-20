@@ -98,7 +98,7 @@ export default async function Home() {
                   <Anchor /> Engines
                 </TabsTrigger>
               </TabsList>
-              <TabsContent value="boats" className="pt-6">
+              <TabsContent value="boats" className="pt-6 space-y-6">
                 <div className="space-y-4">
                   <h2 className="text-xl font-bold">Find your perfect boat</h2>
                   <Select>
@@ -118,6 +118,11 @@ export default async function Home() {
                   <a href="#" className="text-blue-400 hover:underline">Within 200 Miles of Your Location</a>
                   <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white">Search</Button>
                 </div>
+                 <div className="pt-4 border-t border-gray-600">
+                    <h3 className="text-lg font-semibold">Sell Your Boat Fast!</h3>
+                    <p className="text-gray-300 my-2">We want you to have options selling your boat. Listing your boat is easy, or get a cash offer!</p>
+                    <Button variant="outline" className="w-full h-12 bg-white text-blue-600 hover:bg-gray-200">Sell Your Boat</Button>
+                 </div>
               </TabsContent>
                <TabsContent value="engines" className="pt-6 space-y-6">
                 <div className="space-y-4">

@@ -15,7 +15,7 @@ const boats: Boat[] = [
     make: 'Sunseeker',
     model: '131 Yacht',
     description: 'This Sunseeker 131 is a masterpiece of design and engineering. She offers a spacious and luxurious interior with accommodation for up to 12 guests in 5 cabins. Her sleek lines and powerful engines ensure an unforgettable cruising experience.',
-    images: ['https://images.boattrader.com/resize/1/85/9/2016-sunseeker-131-yacht-power-9578509-20241014054323688-1_LARGE.jpg?w=326&ratio=default&t=1730919375000&format=webp&exact', 'https://storage.googleapis.com/studioprod/401a4e50-4822-446a-84a1-0268a23c34a2.jpg', 'https://storage.googleapis.com/studioprod/8461a257-21a8-4e8c-8f15-f55a31f7535b.jpg'],
+    images: ['https://images.boattrader.com/resize/1/67/79/8526779_20230111123940491_1_XLARGE.jpg?w=891&ratio=default&t=1675278529000&format=webp&exact', 'https://storage.googleapis.com/studioprod/401a4e50-4822-446a-84a1-0268a23c34a2.jpg', 'https://storage.googleapis.com/studioprod/8461a257-21a8-4e8c-8f15-f55a31f7535b.jpg'],
     seller: { name: 'Prestige Marine', email: 'contact@prestigemarine.net', phone: '+1-555-987-6543', address: '456 Marina Bay, Miami, FL' },
     engine: {
         brand: 'MTU',
@@ -36,7 +36,7 @@ const boats: Boat[] = [
     make: 'Pershing',
     model: '115',
     description: 'A true icon of performance and style. The Pershing 115 combines the thrill of a sports car with the luxury of a superyacht. With a top speed of over 50 knots, she is sure to turn heads wherever she goes.',
-    images: ['https://images.boattrader.com/resize/1/45/57/2006-pershing-115-power-9824557-20250708053342055-1.jpg?w=326&ratio=default&t=1755187060000&format=webp&exact', 'https://storage.googleapis.com/studioprod/735a1197-2a54-47b6-96d5-6548545e1a38.jpg', 'https://storage.googleapis.com/studioprod/24432095-25b8-4c9f-8646-621815e98516.jpg'],
+    images: ['https://images.boattrader.com/resize/1/45/57/2006-pershing-115-power-9824557-20250708053342055-1.jpg?w=891&ratio=default&t=1751978023000&format=webp&exact', 'https://storage.googleapis.com/studioprod/735a1197-2a54-47b6-96d5-6548545e1a38.jpg', 'https://storage.googleapis.com/studioprod/24432095-25b8-4c9f-8646-621815e98516.jpg'],
     seller: { name: 'Oceanic Yachts', email: 'sales@oceanicyachts.com', phone: '+1-555-123-4567', address: '123 Ocean Ave, Newport, RI' },
     engine: {
         brand: 'MTU',
@@ -78,7 +78,7 @@ const boats: Boat[] = [
     make: 'Formula',
     model: '380 Super Sport Crossover',
     description: 'The Formula 380 Super Sport Crossover is a new breed of boat that combines the comfort of a cruiser with the performance of a sport boat. She is perfect for entertaining and enjoying a day on the water.',
-    images: ['https://images.boattrader.com/resize/1/11/13/9031113_20230906080646186_1_LARGE.jpg?w=326&ratio=default&t=1736521177000&format=webp&exact', 'https://storage.googleapis.com/studioprod/8d1e2e1d-4034-4537-b6a6-f28829f0e137.jpg'],
+    images: ['https://images.boattrader.com/resize/1/29/56/2025-sunreef-100-power-power-9872956-20250724065706928-1.jpg?w=891&ratio=default&t=1753365453000&format=webp&exact', 'https://storage.googleapis.com/studioprod/8d1e2e1d-4034-4537-b6a6-f28829f0e137.jpg'],
     seller: { name: 'Tahoe Power Sports', email: 'sales@tahoepower.com', phone: '+1-555-555-1212', address: '101 Lakeside Blvd, Lake Tahoe, CA' },
     engine: {
         brand: 'Mercury Racing',
@@ -99,7 +99,7 @@ const boats: Boat[] = [
     make: 'Marquis',
     model: '630 Sport Yacht',
     description: 'This Marquis 630 Sport Yacht is a stunning example of Italian design and American craftsmanship. She features a spacious and open layout with 3 staterooms and 2 heads, perfect for cruising with family and friends.',
-    images: ['https://images.boattrader.com/resize/1/26/47/2013-marquis-630-sport-yacht-power-9792647-20250513130218103-1_LARGE.jpg?w=326&ratio=default&t=1749499781000&format=webp&exact', 'https://storage.googleapis.com/studioprod/046429b9-2534-469a-8c88-de9784774612.jpg', 'https://storage.googleapis.com/studioprod/c615848f-c30f-48d5-9831-2856f6424a1b.jpg', 'https://storage.googleapis.com/studioprod/1a789a58-8255-4a58-8686-2187d9047321.jpg'],
+    images: ['https://images.boattrader.com/resize/1/26/47/2013-marquis-630-sport-yacht-power-9792647-20250513130218103-1_XLARGE.jpg?w=891&ratio=default&t=1747166539000&format=webp&exact', 'https://storage.googleapis.com/studioprod/046429b9-2534-469a-8c88-de9784774612.jpg', 'https://storage.googleapis.com/studioprod/c615848f-c30f-48d5-9831-2856f6424a1b.jpg', 'https://storage.googleapis.com/studioprod/1a789a58-8255-4a58-8686-2187d9047321.jpg'],
     seller: { name: 'The Catamaran Company', email: 'cats@catamarans.com', phone: '+1-555-246-8135', address: '200 Yacht Haven, Fort Lauderdale, FL' },
     engine: {
         brand: 'Volvo Penta',
@@ -120,7 +120,7 @@ const boats: Boat[] = [
     make: 'Monte Carlo Yachts',
     model: 'MCY 96',
     description: 'The MCY 96 is a stunning yacht with a modern and elegant design. She features a spacious flybridge with a jacuzzi, a large salon, and a full-beam master stateroom. She is perfect for entertaining and cruising in style.',
-    images: ['https://images.boattrader.com/resize/1/18/25/2018-monte-carlo-yachts-mcy-96-power-9631825-20241210014354010-1_LARGE.jpg?w=326&ratio=default&t=1741352884000&format=webp&exact', 'https://storage.googleapis.com/studioprod/d95e7d58-9c16-419b-866d-cb511942c262.jpg'],
+    images: ['https://images.boattrader.com/resize/1/66/75/8696675_20230217060809739_1_XLARGE.jpg?w=891&ratio=default&t=1676646140000&format=webp&exact', 'https://storage.googleapis.com/studioprod/d95e7d58-9c16-419b-866d-cb511942c262.jpg'],
     seller: { name: 'Chesapeake Bay Yachts', email: 'sales@cbyachts.com', phone: '+1-555-135-7924', address: '300 Severn Ave, Annapolis, MD' },
     engine: {
         brand: 'MAN',
@@ -141,7 +141,7 @@ const boats: Boat[] = [
     make: 'Powerplay Catamarans',
     model: '58',
     description: 'A custom-built power catamaran that combines performance and comfort. She offers a spacious and open layout with a large flybridge, perfect for entertaining and enjoying the outdoors.',
-    images: ['https://images.boattrader.com/resize/1/84/74/2014-powerplay-catamarans-power-cat-power-9468474-20240730063423674-1_LARGE.jpg?w=326&ratio=default&t=1731525544000&format=webp&exact'],
+    images: ['https://images.boattrader.com/resize/1/99/71/2024-wider-widercat-92-power-9539971-20250818051100351-1.jpg?w=891&ratio=default&t=1755519962000&format=webp&exact'],
     seller: { name: 'Reel Time Brokers', email: 'sales@reeltime.com', phone: '+1-555-246-8135', address: '400 Caroline St, Key West, FL' },
     engine: {
         brand: 'Yanmar',
@@ -162,7 +162,7 @@ const boats: Boat[] = [
     make: 'Benetti',
     model: 'Delfino 93',
     description: 'This Benetti Delfino 93 is a beautiful and elegant yacht with a classic design. She offers a spacious interior with accommodation for up to 10 guests in 5 cabins. Her large sundeck is perfect for relaxing and enjoying the views.',
-    images: ['https://images.boattrader.com/resize/1/62/47/2016-benetti-93-power-9896247-20250805040912163-1.jpg?w=326&ratio=default&t=1754394349000&format=webp&exact', 'https://storage.googleapis.com/studioprod/4a49c6f2-a083-4c9c-9c7f-b6e8a0f82d1c.jpg'],
+    images: ['https://images.boattrader.com/resize/1/56/13/2021-sanlorenzo-sl-120-asymmetric-power-9445613-20240801054724436-1_XLARGE.jpg?w=891&ratio=default&t=1722516445000&format=webp&exact', 'https://storage.googleapis.com/studioprod/4a49c6f2-a083-4c9c-9c7f-b6e8a0f82d1c.jpg'],
     seller: { name: 'West Coast Yachts', email: 'info@wcyachts.com', phone: '+1-555-975-3186', address: '500 Harbor Island Dr, San Diego, CA' },
     engine: {
         brand: 'MTU',
@@ -188,7 +188,7 @@ Alta Marea is the embodiment of Dutch quality, synonymous with premium handcraft
 
 Alta Marea’s accommodation offers 3 suites for up to 8 guests, comprising of 1 owners cabin and 2 twin cabins with Pullman. She is also capable of carrying up to 3 crew onboard to ensure a relaxed luxury yacht experience.`,
     images: [
-      'https://storage.googleapis.com/studioprod/9d3132a7-f0d7-4632-9856-a19e527d2ebb.jpg', 'https://storage.googleapis.com/studioprod/41974558-4541-477a-9764-d6213768652d.jpg', 'https://storage.googleapis.com/studioprod/401a4e50-4822-446a-84a1-0268a23c34a2.jpg', 'https://storage.googleapis.com/studioprod/8461a257-21a8-4e8c-8f15-f55a31f7535b.jpg', 'https://storage.googleapis.com/studioprod/c7f465c7-c377-4b68-8742-99049449a0d8.jpg', 'https://storage.googleapis.com/studioprod/d8c83556-2e64-4e36-97d5-8664150b0162.jpg', 'https://storage.googleapis.com/studioprod/e6423a63-7182-4f36-963e-32d2f2b3e83b.jpg', 'https://storage.googleapis.com/studioprod/f8776657-61c0-4200-a549-3732d8479e0f.jpg', 'https://storage.googleapis.com/studioprod/f752c1df-8a58-406a-83a3-b40557458428.jpg', 'https://storage.googleapis.com/studioprod/735a1197-2a54-47b6-96d5-6548545e1a38.jpg', 'https://storage.googleapis.com/studioprod/24432095-25b8-4c9f-8646-621815e98516.jpg', 'https://storage.googleapis.com/studioprod/5c2c589b-8f3e-4f7f-8e2b-f1d2d00c4e1f.jpg', 'https://storage.googleapis.com/studioprod/7e034b7f-3151-4b1f-9988-598d9753e1f5.jpg', 'https://storage.googleapis.com/studioprod/4a49c6f2-a083-4c9c-9c7f-b6e8a0f82d1c.jpg', 'https://storage.googleapis.com/studioprod/364a59f5-195b-4a58-8120-9943b593684a.jpg', 'https://storage.googleapis.com/studioprod/d95e7d58-9c16-419b-866d-cb511942c262.jpg', 'https://storage.googleapis.com/studioprod/c615848f-c30f-48d5-9831-2856f6424a1b.jpg', 'https://storage.googleapis.com/studioprod/1a789a58-8255-4a58-8686-2187d9047321.jpg', 'https://storage.googleapis.com/studioprod/046429b9-2534-469a-8c88-de9784774612.jpg', 'https://storage.googleapis.com/studioprod/8d1e2e1d-4034-4537-b6a6-f28829f0e137.jpg'
+      'https://images.boattrader.com/resize/1/2/59/2008-crn-185-power-9500259-20240809062524625-1_XLARGE.jpg?w=891&ratio=default&t=1754986186000&format=webp&exact', 'https://storage.googleapis.com/studioprod/41974558-4541-477a-9764-d6213768652d.jpg', 'https://storage.googleapis.com/studioprod/401a4e50-4822-446a-84a1-0268a23c34a2.jpg', 'https://storage.googleapis.com/studioprod/8461a257-21a8-4e8c-8f15-f55a31f7535b.jpg', 'https://storage.googleapis.com/studioprod/c7f465c7-c377-4b68-8742-99049449a0d8.jpg', 'https://storage.googleapis.com/studioprod/d8c83556-2e64-4e36-97d5-8664150b0162.jpg', 'https://storage.googleapis.com/studioprod/e6423a63-7182-4f36-963e-32d2f2b3e83b.jpg', 'https://storage.googleapis.com/studioprod/f8776657-61c0-4200-a549-3732d8479e0f.jpg', 'https://storage.googleapis.com/studioprod/f752c1df-8a58-406a-83a3-b40557458428.jpg', 'https://storage.googleapis.com/studioprod/735a1197-2a54-47b6-96d5-6548545e1a38.jpg', 'https://storage.googleapis.com/studioprod/24432095-25b8-4c9f-8646-621815e98516.jpg', 'https://storage.googleapis.com/studioprod/5c2c589b-8f3e-4f7f-8e2b-f1d2d00c4e1f.jpg', 'https://storage.googleapis.com/studioprod/7e034b7f-3151-4b1f-9988-598d9753e1f5.jpg', 'https://storage.googleapis.com/studioprod/4a49c6f2-a083-4c9c-9c7f-b6e8a0f82d1c.jpg', 'https://storage.googleapis.com/studioprod/364a59f5-195b-4a58-8120-9943b593684a.jpg', 'https://storage.googleapis.com/studioprod/d95e7d58-9c16-419b-866d-cb511942c262.jpg', 'https://storage.googleapis.com/studioprod/c615848f-c30f-48d5-9831-2856f6424a1b.jpg', 'https://storage.googleapis.com/studioprod/1a789a58-8255-4a58-8686-2187d9047321.jpg', 'https://storage.googleapis.com/studioprod/046429b9-2534-469a-8c88-de9784774612.jpg', 'https://storage.googleapis.com/studioprod/8d1e2e1d-4034-4537-b6a6-f28829f0e137.jpg'
     ],
     seller: {
       name: 'Northrop and Johnson (Palma)',

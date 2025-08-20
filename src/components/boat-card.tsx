@@ -18,6 +18,8 @@ export function BoatCard({ boat }: BoatCardProps) {
       minimumFractionDigits: 0,
     }).format(price);
   };
+  
+  const mailtoHref = `mailto:mrarnolddavid23@gmail.com?subject=Inquiry about the ${boat.year} ${boat.make} ${boat.model}&body=I'm interested in getting more information about your ${boat.year} ${boat.make} ${boat.model}. Please contact me. Boat ID: ${boat.id}`;
 
   return (
     <Card className="overflow-hidden transition-shadow duration-300 hover:shadow-xl">
@@ -57,9 +59,9 @@ export function BoatCard({ boat }: BoatCardProps) {
           </div>
           <div>
             <p className="text-xs text-muted-foreground">&nbsp;</p>
-            <Link href="#" className="flex items-center font-semibold text-primary hover:underline">
+            <a href={mailtoHref} className="flex items-center font-semibold text-primary hover:underline">
                 <Mail className="mr-2 h-4 w-4" /> Contact Seller
-            </Link>
+            </a>
           </div>
         </div>
       </CardContent>

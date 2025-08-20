@@ -41,14 +41,6 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
     fetchBoats();
   }, []);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "The seller has been notified and will get back to you shortly.",
-    });
-  };
-
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -70,6 +62,8 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
       { label: 'Model', value: boat.model },
       { label: 'Capacity', value: boat.capacity ?? '-' },
   ];
+  
+  const mailtoHref = `mailto:mrarnolddavid23@gmail.com?subject=Inquiry about the ${boat.year} ${boat.make} ${boat.model}&body=I'm interested in getting more information about your ${boat.year} ${boat.make} ${boat.model}. Please contact me. Boat ID: ${boat.id}`;
 
   return (
     <div className="container mx-auto max-w-7xl px-4 py-8">
@@ -238,24 +232,9 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
                         </CardDescription>
                     </CardHeader>
                     <CardContent>
-                         <form onSubmit={handleSubmit} className="space-y-4">
-                            <div>
-                               <Label htmlFor="name">First & Last Name</Label>
-                               <Input id="name" required />
-                            </div>
-                            <div>
-                               <Label htmlFor="email">Your Email</Label>
-                               <Input id="email" type="email" required />
-                            </div>
-                             <div>
-                               <Label htmlFor="phone">Your Phone</Label>
-                               <Input id="phone" type="tel" />
-                            </div>
-                            <div>
-                                <Textarea defaultValue={`I'm interested in getting more information about your ${boat.year} ${boat.make} ${boat.model}. Please contact me.`} />
-                            </div>
-                            <Button type="submit" className="w-full">Contact Seller</Button>
-                         </form>
+                         <Button asChild className="w-full">
+                           <a href={mailtoHref}>Contact Seller</a>
+                         </Button>
                     </CardContent>
                 </Card>
                  <Image src="https://placehold.co/300x600.png" width={300} height={600} alt="Ad" className="w-full" data-ai-hint="advertisement" />
@@ -266,7 +245,3 @@ export default function BoatDetailClient({ boat }: { boat: Boat }) {
     </div>
   );
 }
-
-    
-
-    

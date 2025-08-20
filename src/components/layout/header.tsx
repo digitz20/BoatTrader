@@ -8,17 +8,66 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Menu, Ship } from 'lucide-react';
 import { Button } from '../ui/button';
-
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '../ui/sheet';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
 
 export function Header() {
   const navItems = [
-    { name: 'Find', href: '/listings', dropdown: true },
+    { 
+      name: 'Find', 
+      href: '/listings', 
+      dropdown: true,
+      subItems: [
+        { name: 'Boats For Sale', href: '#' },
+        { name: 'New Boats', href: '#' },
+        { name: 'Boat Types', href: '#' },
+        { name: 'Boat Dealers', href: '#' },
+        { name: 'Outboard Motors & Engines', href: '#' },
+        { name: 'Boat Trailers', href: '#' },
+      ]
+    },
     { name: 'Sell Your Boat', href: '#' },
-    { name: 'Finance', href: '#', dropdown: true },
-    { name: 'Services', href: '#', dropdown: true },
-    { name: 'Research', href: '#', dropdown: true },
+    { 
+      name: 'Finance', 
+      href: '#', 
+      dropdown: true,
+      subItems: [
+        { name: 'Boat Loans', href: '#' },
+        { name: 'Boat Loan Calculator', href: '#' },
+        { name: 'Boat Loan Rates', href: '#' },
+        { name: 'FAQ - How to Finance', href: '#' },
+      ]
+    },
+    { 
+      name: 'Services', 
+      href: '#', 
+      dropdown: true,
+      subItems: [
+        { name: 'Extended Service Plan', href: '#' },
+        { name: 'Tire & Wheel Plan', href: '#' },
+        { name: 'GAP Protection', href: '#' },
+        { name: 'Roadside Assistance', href: '#' },
+        { name: 'Boat Insurance', href: '#' },
+        { name: 'Boat Transport', href: '#' },
+        { name: 'Boat Warranty', href: '#' },
+        { name: 'Boat Documentation', href: '#' },
+        { name: 'Boat Rental', href: '#' },
+        { name: 'Become a Member', href: '#' },
+      ]
+    },
+    { 
+      name: 'Research', 
+      href: '#', 
+      dropdown: true,
+      subItems: [
+        { name: 'Get Advice On: Buying', href: '#' },
+        { name: 'Get Advice On: Selling', href: '#' },
+        { name: 'Get Advice On: Boating', href: '#' },
+        { name: 'Read Reviews', href: '#' },
+      ]
+    },
   ]
 
   return (
@@ -28,8 +77,9 @@ export function Header() {
             <span className="font-brand text-3xl font-bold" style={{color: '#132536'}}>Boat Trader</span>
         </Link>
 
-        <div className="flex items-center gap-6">
-            <nav className="hidden items-center space-x-6 lg:flex">
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-6">
+            <nav className="flex items-center space-x-6">
             {navItems.map((item) => (
                 item.dropdown ? (
                 <DropdownMenu key={item.name}>
@@ -39,12 +89,11 @@ export function Header() {
                     </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
-                    <DropdownMenuItem>Boats For Sale</DropdownMenuItem>
-                    <DropdownMenuItem>New Boats</DropdownMenuItem>
-                    <DropdownMenuItem>Boat Types</DropdownMenuItem>
-                    <DropdownMenuItem>Boat Dealers</DropdownMenuItem>
-                    <DropdownMenuItem>Outboard Motors & Engines</DropdownMenuItem>
-                    <DropdownMenuItem>Boat Trailers</DropdownMenuItem>
+                      {item.subItems?.map(subItem => (
+                         <DropdownMenuItem key={subItem.name} asChild>
+                            <Link href={subItem.href}>{subItem.name}</Link>
+                         </DropdownMenuItem>
+                      ))}
                     </DropdownMenuContent>
                 </DropdownMenu>
                 ) : (
@@ -61,6 +110,64 @@ export function Header() {
                 <Button variant="ghost" className="text-base text-foreground">Sign up</Button>
                 <Button variant="ghost" className="text-base text-foreground">Log in</Button>
             </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        <div className="lg:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Open menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <div className="p-4">
+                 <Link href="/" className="flex items-center space-x-2 mb-8">
+                    <Ship className="h-8 w-8 text-primary" />
+                    <span className="font-brand text-2xl font-bold text-primary">Boat Trader</span>
+                </Link>
+                <div className="flex flex-col space-y-2">
+                  <Accordion type="multiple" className="w-full">
+                    {navItems.map((item, index) => (
+                       item.dropdown ? (
+                         <AccordionItem value={`item-${index}`} key={item.name}>
+                           <AccordionTrigger className="text-lg font-semibold">
+                             {item.name}
+                           </AccordionTrigger>
+                           <AccordionContent>
+                             <div className="flex flex-col space-y-2 pl-4">
+                              {item.subItems?.map(subItem => (
+                                <SheetClose key={subItem.name} asChild>
+                                  <Link href={subItem.href} className="text-muted-foreground hover:text-primary">
+                                    {subItem.name}
+                                  </Link>
+                                </SheetClose>
+                              ))}
+                             </div>
+                           </AccordionContent>
+                         </AccordionItem>
+                       ) : (
+                        <SheetClose key={item.name} asChild>
+                           <Link href={item.href} className="py-4 text-lg font-semibold border-b">
+                            {item.name}
+                           </Link>
+                        </SheetClose>
+                       )
+                    ))}
+                  </Accordion>
+                   <div className="border-t pt-4 space-y-2">
+                     <SheetClose asChild>
+                      <Button variant="outline" className="w-full justify-start text-lg">Sign up</Button>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Button variant="outline" className="w-full justify-start text-lg">Log in</Button>
+                    </SheetClose>
+                   </div>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>

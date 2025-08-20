@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -96,6 +95,21 @@ export function PaymentOptionsDialog({ open, onOpenChange, isTriggered = false, 
                   <PaymentOptionMessage 
                     icon={<Landmark className="h-4 w-4" />}
                     text="Bank Transfer"
+                    onClick={handlePaymentSelection} 
+                  />
+                  <PaymentOptionMessage 
+                    icon={<CreditCard className="h-4 w-4" />}
+                    text="Debit Card"
+                    onClick={handlePaymentSelection} 
+                  />
+                   <PaymentOptionMessage 
+                    icon={<CreditCard className="h-4 w-4" />}
+                    text="Verve Card"
+                    onClick={handlePaymentSelection} 
+                  />
+                   <PaymentOptionMessage 
+                    icon={<CreditCard className="h-4 w-4" />}
+                    text="Mastercard"
                     onClick={handlePaymentSelection} 
                   />
                    <PaymentOptionMessage 

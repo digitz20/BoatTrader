@@ -1,0 +1,69 @@
+
+"use client";
+
+import { useState } from "react";
+import QRCode from "qrcode.react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Copy, Check } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+
+interface CryptoOption {
+  name: string;
+  address: string;
+}
+
+const cryptoOptions: CryptoOption[] = [
+  { name: "Bitcoin", address: "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh" },
+  { name: "Ethereum", address: "0x32Be343B94f860124dC4fEe278FDCBD38C102D88" },
+  { name: "USDT (TRC20)", address: "TBE2BJMnaFupTQD1gT4aKkkm2k5gWb9a2" },
+];
+
+export function CryptoPayment() {
+  const [copiedAddress, setCopiedAddress] = useState<string | null>(null);
+  const { toast } = useToast();
+
+  const handleCopy = (address: string) => {
+    navigator.clipboard.writeText(address);
+    setCopiedAddress(address);
+    toast({
+        title: "Address Copied!",
+        description: "The wallet address has been copied to your clipboard.",
+    });
+    setTimeout(() => setCopiedAddress(null), 2000);
+  };
+
+  return (
+    <Tabs defaultValue="Bitcoin" className="w-full">
+      <TabsList className="grid w-full grid-cols-3">
+        {cryptoOptions.map(option => (
+          <TabsTrigger key={option.name} value={option.name}>
+            {option.name}
+          </TabsTrigger>
+        ))}
+      </TabsList>
+      {cryptoOptions.map(option => (
+        <TabsContent key={option.name} value={option.name}>
+          <Card>
+            <CardContent className="space-y-4 pt-6">
+              <div className="flex justify-center">
+                <QRCode value={option.address} size={160} />
+              </div>
+              <p className="text-center text-sm text-muted-foreground">
+                Scan this QR code with your wallet app or copy the address below.
+              </p>
+              <div className="flex items-center space-x-2">
+                <Input value={option.address} readOnly />
+                <Button variant="outline" size="icon" onClick={() => handleCopy(option.address)}>
+                  {copiedAddress === option.address ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      ))}
+    </Tabs>
+  );
+}

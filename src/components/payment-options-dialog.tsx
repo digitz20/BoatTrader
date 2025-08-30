@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -9,8 +10,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogFooter
 } from "@/components/ui/dialog";
-import { Landmark, CreditCard, HelpCircle, ArrowLeft, Loader2, Send } from "lucide-react";
+import { Landmark, CreditCard, HelpCircle, ArrowLeft, Loader2, Send, UploadCloud, Clock } from "lucide-react";
 import { CryptoPayment } from "./crypto-payment";
 import { Alert, AlertTitle, AlertDescription } from "./ui/alert";
 
@@ -55,7 +57,7 @@ interface PaymentOptionsDialogProps {
 }
 
 export function PaymentOptionsDialog({ open, onOpenChange, isTriggered = false, triggerLabel = "Make Payment" }: PaymentOptionsDialogProps) {
-  const [view, setView] = useState<"options" | "crypto" | "redirecting">("options");
+  const [view, setView] = useState<"options" | "crypto" | "redirecting" | "confirming">("options");
 
   const handlePaymentSelection = () => {
     setView("redirecting");
@@ -63,6 +65,10 @@ export function PaymentOptionsDialog({ open, onOpenChange, isTriggered = false, 
         setView("crypto");
     }, 3000);
   };
+
+  const handleUploadProof = () => {
+      setView("confirming");
+  }
 
   const handleOpenChange = (open: boolean) => {
     if (onOpenChange) {
@@ -164,15 +170,32 @@ export function PaymentOptionsDialog({ open, onOpenChange, isTriggered = false, 
                         <DialogTitle>Pay with Crypto</DialogTitle>
                     </div>
                   <DialogDescription>
-                    Send your payment to one of the addresses below.
+                    Send your payment to one of the addresses below, then upload proof of payment.
                   </DialogDescription>
                 </DialogHeader>
                 <div className="pt-4 space-y-4">
                     <CryptoPayment />
-                     <p className="text-xs text-muted-foreground mt-2 text-center">
-                        After payment, please send proof of receipt to the seller's contact information.
-                     </p>
                 </div>
+                <DialogFooter className="mt-4">
+                    <Button className="w-full" onClick={handleUploadProof}>
+                        <UploadCloud className="mr-2 h-4 w-4" />
+                        Upload Proof & Confirm
+                    </Button>
+                </DialogFooter>
+            </>
+         )}
+         {view === "confirming" && (
+            <>
+                <DialogHeader>
+                  <DialogTitle>Confirmation Pending</DialogTitle>
+                </DialogHeader>
+                <div className="flex flex-col items-center justify-center gap-4 py-8">
+                    <Clock className="h-8 w-8 text-primary" />
+                    <p className="text-muted-foreground text-center">Your payment is waiting to be confirmed. You will be notified once the transaction is complete.</p>
+                </div>
+                <DialogFooter>
+                    <Button variant="outline" onClick={() => onOpenChange?.(false)}>Close</Button>
+                </DialogFooter>
             </>
          )}
       </DialogContent>

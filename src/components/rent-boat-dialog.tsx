@@ -23,7 +23,7 @@ interface RentBoatDialogProps {
   isCard?: boolean;
 }
 
-const HOURLY_RATE = 100;
+const HOURLY_RATE = 200;
 const DAILY_RATE = 2000;
 
 export function RentBoatDialog({ boatPrice, isCard = false }: RentBoatDialogProps) {

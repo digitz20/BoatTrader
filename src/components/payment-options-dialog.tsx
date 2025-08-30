@@ -15,13 +15,15 @@ import {
 import { Landmark, CreditCard, HelpCircle, ArrowLeft, Loader2, Send, UploadCloud, Clock } from "lucide-react";
 import { CryptoPayment } from "./crypto-payment";
 import { Alert, AlertTitle, AlertDescription } from "./ui/alert";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
 
 const PayPalLogo = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 h-4 w-4">
         <path d="M10 13l2.5 0c2.5 0 5 -2.5 5 -5c0 -2.5 -2.5 -5 -5 -5h-2.5z"></path>
         <path d="M8 13l2.5 0c2.5 0 5 -2.5 5 -5c0 -2.5 -2.5 -5 -5 -5h-2.5z" fill="#003087"></path>
         <path d="M6 13l2.5 0c2.5 0 5 -2.5 5 -5c0 -2.5 -2.5 -5 -5 -5h-2.5z" fill="#009cde"></path>
-        <path d="M4 13l2.5 0c2.5 0 5 -2.5 5 -5c0 -2.5 -2.5 -5 -5 -5h-2.5z" fill="#012169"></path>
+        <path d="M4 13l2.5 0c2.5 0 5 -2.5-2.5 -5 -5 -5h-2.5z" fill="#012169"></path>
     </svg>
 );
 
@@ -175,6 +177,10 @@ export function PaymentOptionsDialog({ open, onOpenChange, isTriggered = false, 
                 </DialogHeader>
                 <div className="pt-4 space-y-4">
                     <CryptoPayment />
+                    <div className="grid w-full max-w-sm items-center gap-1.5">
+                      <Label htmlFor="payment-proof">Upload Payment Proof</Label>
+                      <Input id="payment-proof" type="file" accept="image/*" />
+                    </div>
                 </div>
                 <DialogFooter className="mt-4">
                     <Button className="w-full" onClick={handleUploadProof}>
